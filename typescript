@@ -1,0 +1,47 @@
+Script started on Thu Mar 26 15:48:06 2020
+[1m[7m%[27m[1m[0m                                                                                                                    ]2;thomas@Thomass-MacBook-Pro: ~/workspace/holiday-road-solar-space-sharks]1;..-space-sharks[0m[27m[24m[J[01;32m➜  [36mholiday-road-solar-space-sharks[00m [01;34mgit:([31mtl-first-contact[34m) [33m✗[00m [K[?1h=[?2004hlls[?1l>[?2004l
+]2;ls -G]1;lsREADME.md  [1m[36mapi[39;49m[0m        index.html [1m[36mpersonas[39;49m[0m   [1m[36mscripts[39;49m[0m    [1m[36mstyles[39;49m[0m     typescript
+[1m[7m%[27m[1m[0m                                                                                                                    ]2;thomas@Thomass-MacBook-Pro: ~/workspace/holiday-road-solar-space-sharks]1;..-space-sharks[0m[27m[24m[J[01;32m➜  [36mholiday-road-solar-space-sharks[00m [01;34mgit:([31mtl-first-contact[34m) [33m✗[00m [K[?1h=[?2004hsscr
+[J[0mSCREEN_NO      [JSCRIPT         [Jscreen         [Jscreencapture  [Jscript         [J[1;31mscripts[0m/     [J[A[0m[27m[24m[60Cscr[KSCREEN_NO[1m=[0m
+[J[7mSCREEN_NO    [0m  [JSCRIPT         [Jscreen         [Jscreencapture  [Jscript         [J[1;31mscripts[0m/     [J[A[0m[27m[24m[60CSCREEN_NO[1m=[0m[K
+[7mSCREEN_NO    [0m  [7mSCREEN_NO    [0m  [A[0m[27m[24m[60CSCREEN_NO[1m=[0m[KIPT[1m=[0m  [0m 
+[15C[7mSCRIPT       [0m  SCREEN_NO      [A[0m[27m[24m[60CSCRIPT[1m=[0m[Kscreen[0m 
+[30C[7mscreen       [0m  [15CSCRIPT         [A[0m[27m[24m[60Cscreen[Kcapture
+[45C[7mscreencapture[0m  [30Cscreen         [A[0m[27m[24m[60Cscreencapture[K[10Dipt       
+[60C[7mscript       [0m  [45Cscreencapture  [A[0m[27m[24m[60Cscript[Ks[1m/[0m
+[75C[7mscripts/     [0m[60Cscript         [A[0m[27m[24m[60Cscripts[1m/[0m[K
+[J[A[68C[0m [?1l>[?2004l
+[J]2;scripts]1;scripts[1m[7m%[27m[1m[0m                                                                                                                    ]2;thomas@Thomass-MacBook-Pro: ~/workspace/holiday-road-solar-space-sharks/scripts]1;..harks/scripts[0m[27m[24m[J[01;32m➜  [36mscripts[00m [01;34mgit:([31mtl-first-contact[34m) [33m✗[00m [K[?1h=[?2004hlls[?1l>[?2004l
+]2;ls -G]1;ls[1m[36mattractions[39;49m[0m [1m[36mbuttons[39;49m[0m     [1m[36mdirections[39;49m[0m  [1m[36mfoods[39;49m[0m       [1m[36mhomePage[39;49m[0m    [1m[36mitineraries[39;49m[0m main.js     [1m[36mparks[39;49m[0m       [1m[36mweather[39;49m[0m
+[1m[7m%[27m[1m[0m                                                                                                                    ]2;thomas@Thomass-MacBook-Pro: ~/workspace/holiday-road-solar-space-sharks/scripts]1;..harks/scripts[0m[27m[24m[J[01;32m➜  [36mscripts[00m [01;34mgit:([31mtl-first-contact[34m) [33m✗[00m [K[?1h=[?2004hpparks[?1l>[?2004l
+]2;parks]1;parks[1m[7m%[27m[1m[0m                                                                                                                    ]2;thomas@Thomass-MacBook-Pro: ~/workspace/holiday-road-solar-space-sharks/scripts/parks]1;..scripts/parks[0m[27m[24m[J[01;32m➜  [36mparks[00m [01;34mgit:([31mtl-first-contact[34m) [33m✗[00m [K[?1h=[?2004hlls[?1l>[?2004l
+]2;ls -G]1;lsParkSelect.js        RenderParksSelect.js parkProvider.js
+[1m[7m%[27m[1m[0m                                                                                                                    ]2;thomas@Thomass-MacBook-Pro: ~/workspace/holiday-road-solar-space-sharks/scripts/parks]1;..scripts/parks[0m[27m[24m[J[01;32m➜  [36mparks[00m [01;34mgit:([31mtl-first-contact[34m) [33m✗[00m [K[?1h=[?2004h~~/workspace[1m/[0m[0m [?1l>[?2004l
+]2;~/workspace]1;~/workspace[1m[7m%[27m[1m[0m                                                                                                                    ]2;thomas@Thomass-MacBook-Pro: ~/workspace]1;~/workspace[0m[27m[24m[J[01;32m➜  [36mworkspace[00m [K[?1h=[?2004hlls[?1l>[?2004l
+]2;ls -G]1;ls[1m[36mCapstone[39;49m[0m                                     [1m[36mfoundations[39;49m[0m
+[1m[36mChalkboard[39;49m[0m                                   [1m[36mgithub-workflow-aquarium-cohort-39-swordfish[39;49m[0m
+[1m[36mDJ[39;49m[0m                                           [1m[36mgroup-project-1[39;49m[0m
+[1m[36mGlassdale[39;49m[0m                                    [1m[36mholiday-road-solar-space-sharks[39;49m[0m
+[1m[36mJava-Provider-Coffee[39;49m[0m                         index.html
+[1m[36mLightning Exercise[39;49m[0m                           main.css
+[1m[36maquarium[39;49m[0m                                     main.js
+[1m[36mclassPractice[39;49m[0m                                [1m[36mmessage-filter[39;49m[0m
+[1m[36mcustom-dashboard[39;49m[0m                             [1m[36mmessage-main[39;49m[0m
+[1m[36mcustom-theme-maker-green-monkeys[39;49m[0m             [1m[36mmyGlassdale[39;49m[0m
+[1m[36mdadJokePractice[39;49m[0m
+[1m[7m%[27m[1m[0m                                                                                                                    ]2;thomas@Thomass-MacBook-Pro: ~/workspace]1;~/workspace[0m[27m[24m[J[01;32m➜  [36mworkspace[00m [K[?1h=[?2004hhholiday-road-solar-space-sharks[1m/[0m[0m [?1l>[?2004l
+]2;holiday-road-solar-space-sharks]1;holiday-road-solar-space-sharks[1m[7m%[27m[1m[0m                                                                                                                    ]2;thomas@Thomass-MacBook-Pro: ~/workspace/holiday-road-solar-space-sharks]1;..-space-sharks[0m[27m[24m[J[01;32m➜  [36mholiday-road-solar-space-sharks[00m [01;34mgit:([31mtl-first-contact[34m) [33m✗[00m [K[?1h=[?2004hsserve[?1l>[?2004l
+]2;serve]1;serve[32m[39m
+[32m   ┌───────────────────────────────────────────────────┐[39m
+   [32m│[39m                                                   [32m│[39m
+   [32m│[39m   [32mServing![39m                                        [32m│[39m
+   [32m│[39m                                                   [32m│[39m
+   [32m│[39m   [1m- Local:[22m            http://localhost:51861      [32m│[39m
+   [32m│[39m   [1m- On Your Network:[22m  http://192.168.1.12:51861[31m[39m   [32m│[39m
+   [32m│[39m   [31m[39m                                                [32m│[39m
+   [32m│[39m   [31mThis port was picked because [4m5000[24m is in use.[39m    [32m│[39m
+   [32m│[39m                                                   [32m│[39m
+   [32m│[39m   [90mCopied local address to clipboard![39m              [32m│[39m
+   [32m│[39m                                                   [32m│[39m
+[32m   └───────────────────────────────────────────────────┘[39m
+[32m[39m
