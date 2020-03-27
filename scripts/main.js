@@ -6,12 +6,16 @@ import { RenderParksSelectComponent } from "./parks/ParkSelectComponent.js";
 import "./AppController.js";
 import "./itineraries/MyTripView.js"
 import { RenderMyTripViewContainers } from "./itineraries/MyTripView.js";
+import { RenderFoodSelectComponent } from "./foods/FoodSelectComponent.js";
 
 //fetch the data from our local parks API, then render the drop-down menu with the list of parks
+// then do the same for Foods^
 getParks().then(RenderParksSelectComponent)
+    .then(getFoods)
+    .then(RenderFoodSelectComponent)
+
 
 getAttractions()
-getFoods()
 
 //load the welcome components into the welcomeContainer on the DOM
 Welcome()

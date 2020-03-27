@@ -21,3 +21,10 @@ eventHub.addEventListener("saveParkButtonClicked", event => {
     const parkTarget = document.querySelector("#myTripPark")
     parkTarget.innerHTML = `Park: ${chosenPark}`
 })
+
+//when the "save food button" is clicked, get the chosen food ID and insert it into the myTripFood section on the DOM
+eventHub.addEventListener("saveFoodButtonClicked", event => {
+    chosenFood = event.detail.foodName
+    const foodTarget = document.querySelector("#myTripFood")
+    foodTarget.innerHTML = `Restaurant: ${chosenFood}`
+})
