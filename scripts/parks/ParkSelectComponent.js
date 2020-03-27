@@ -2,6 +2,7 @@ import { useParks } from "./parkProvider.js"
 import { ParkSelectDropdown } from "./ParkSelectDropdown.js"
 import { SaveParkButton } from "../buttons/SaveParkToTripButton.js"
 import { ParkPreview } from "./ParkPreview.js"
+import { ViewMyTripButton } from "../buttons/ViewMyTripButton.js"
 
 const eventHub = document.querySelector('.container')
 const contentTarget = document.querySelector(".dropdownContainer")
@@ -19,8 +20,9 @@ const render = () => {
     contentTarget.innerHTML += `
     <section id="parkPreview"></section>
     `
-
     contentTarget.innerHTML += SaveParkButton()
+
+    contentTarget.innerHTML += ViewMyTripButton()
 
 }
 
