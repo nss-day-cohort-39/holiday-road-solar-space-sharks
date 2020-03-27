@@ -16,4 +16,5 @@ getFoods()
 //load the welcome components into the welcomeContainer on the DOM
 Welcome()
 
+//renders the three sections inside of previewContainer on the DOM
 RenderMyTripViewContainers()

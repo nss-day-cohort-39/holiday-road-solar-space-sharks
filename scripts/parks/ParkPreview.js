@@ -1,3 +1,7 @@
+/*
+    creates an HTML representation of the park details
+*/
+
 export const ParkPreview = (parkObject) => {
     return `
         <h2>${parkObject.fullName}</h2>
