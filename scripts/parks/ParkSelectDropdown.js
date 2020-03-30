@@ -17,7 +17,7 @@ export const ParkSelectDropdown = (allTheParks) => {
 // when park chosen in dropdown, send change event to eventHub with detail of Park Chosen (destination: ParkSelectComponent)
 eventHub.addEventListener("change", changeEvent => {
     if (changeEvent.target.id === "parkSelectDropdown") {
-    
+
         let parkSelectDropdownValue = document.getElementById("parkSelectDropdown").value
         let parkSelectDropDownName = document.querySelector(`#option--${parkSelectDropdownValue}`).innerHTML
 
@@ -30,5 +30,4 @@ eventHub.addEventListener("change", changeEvent => {
 
         eventHub.dispatchEvent(changeParkClickEvent)
     }
-    
 })
