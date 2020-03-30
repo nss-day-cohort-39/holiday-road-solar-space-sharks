@@ -3,11 +3,10 @@ import { AttractionSelectDropdown } from "./AttractionSelectDropdown.js"
 import { AttractionPreview } from "./AttractionPreview.js"
 import { SaveAttractionButton } from "../buttons/SaveAttractionToTripButton.js"
 import { ViewMyTripButton } from "../buttons/ViewMyTripButton.js"
-
-
+import { useParks } from "../parks/parkProvider.js"
 
 const eventHub = document.querySelector('.container')
-const contentTarget = document.querySelector(".dropdownContainer")
+const contentTarget = document.querySelector(".dropdownContainer--attraction")
 
 // export the initial page rendering of the Attraction Select Dropdown
 
@@ -17,9 +16,9 @@ export const RenderAttractionsSelectComponent = () => {
 
 // function that pulls the attractions data and iterates each attraction to display the Attraction dropdown HTML rep.
 
-const render = () => {
-    const attractions = useAttractions()
-    contentTarget.innerHTML += AttractionSelectDropdown(attractions)
+const render = (filteredAttractions) => {
+
+    contentTarget.innerHTML = AttractionSelectDropdown(filteredAttractions)
 
     contentTarget.innerHTML += `
     <section id="attractionPreview"></section>
@@ -29,6 +28,26 @@ const render = () => {
     contentTarget.innerHTML += ViewMyTripButton()
 
 }
+
+eventHub.addEventListener("parkDropDownChanged", event => {
+    //list of all the parks
+    const parks = useParks()
+
+    //list of all the attractions
+    const attractions = useAttractions()
+
+    //park code the user chose from the drop-down
+    const chosenParkCode = event.detail.parkCode
+
+    const chosenParkObject = parks.find(park => park.parkCode === chosenParkCode)
+
+    const chosenParkState = chosenParkObject.states
+
+    const filteredAttractions = attractions.filter(attraction => attraction.state === chosenParkState)
+
+    render(filteredAttractions)
+
+})
 
 eventHub.addEventListener("attractionDropDownChanged", event => {
     const contentTarget = document.querySelector("#attractionPreview")

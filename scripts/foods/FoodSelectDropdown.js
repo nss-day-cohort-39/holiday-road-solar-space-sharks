@@ -19,12 +19,10 @@ eventHub.addEventListener("change", changeEvent => {
     if (changeEvent.target.id === "foodSelectDropdown") {
 
         let foodSelectDropdownValue = document.getElementById("foodSelectDropdown").value
-        let foodSelectDropDownName = document.querySelector(`#foodoption--${foodSelectDropdownValue}`).innerHTML
 
         const changeFoodClickEvent = new CustomEvent("foodDropDownChanged", {
             detail: {
-                foodId: foodSelectDropdownValue,
-                foodName: foodSelectDropDownName
+                foodId: foodSelectDropdownValue
             }
         })
 
