@@ -18,7 +18,9 @@ const render = () => {
     contentTarget.innerHTML = ParkSelectDropdown(parks)
 
     contentTarget.innerHTML += `
-    <section id="parkPreview"></section>
+    <section id="parkPreview">
+        <div class="weather"></div>
+    </section>
     `
     contentTarget.innerHTML += SaveParkButton()
 
