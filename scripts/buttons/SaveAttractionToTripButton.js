@@ -11,13 +11,10 @@ eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveAttractionButton") {
 
         let attractionSelectDropdownValue = document.getElementById("attractionSelectDropdown").value
-        let attractionSelectDropDownName = document.querySelector(`#attractionOption--${attractionSelectDropdownValue}`).innerHTML
-
 
         const saveAttractionClickEvent = new CustomEvent("saveAttractionButtonClicked", {
             detail: {
-                attractionId: attractionSelectDropdownValue,
-                attractionName: attractionSelectDropDownName
+                attractionId: attractionSelectDropdownValue
             }
         })
 
