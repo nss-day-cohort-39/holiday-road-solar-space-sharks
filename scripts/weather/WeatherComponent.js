@@ -22,7 +22,7 @@ const RenderWeather = (parkObject) => {
                 contentTarget.innerHTML += `
                 <div class="weatherTemp">${day.main.temp}</div>
                 <div class="weatherDate">${date}</div>
-                <div class="weatherIcon"><img src="http://openweathermap.org/img/wn/${day.weather.icon}@1x.png" /></div>`
+                <div class="weatherIcon"><img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png"></div>`
             }
         });
     })
