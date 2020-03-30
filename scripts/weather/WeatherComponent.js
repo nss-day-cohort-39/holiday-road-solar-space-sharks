@@ -17,12 +17,16 @@ const RenderWeather = (parkObject) => {
         contentTarget.innerHTML = ""
         weather.forEach(day => {
             const [date, time] = day.dt_txt.split(" ")
+            const fahrenheit = Math.floor((day.main.temp -273)*(9/5) + 32)
             console.log(weather)
             if (time === "12:00:00") {
                 contentTarget.innerHTML += `
-                <div class="weatherTemp">${day.main.temp}</div>
-                <div class="weatherDate">${date}</div>
-                <div class="weatherIcon"><img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png"></div>`
+                <div class="weatherTable">
+                    <div class="weatherDate">${date}</div>
+                    <div class="weatherIcon"><img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png"></div>
+                    <div class="weatherTemp">${fahrenheit}</div>
+                </div>
+                `
             }
         });
     })
