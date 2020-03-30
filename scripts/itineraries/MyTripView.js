@@ -21,3 +21,9 @@ eventHub.addEventListener("saveParkButtonClicked", event => {
     const parkTarget = document.querySelector("#myTripPark")
     parkTarget.innerHTML = `Park: ${chosenPark}`
 })
+
+eventHub.addEventListener("saveAttractionButtonClicked", event => {
+    chosenAttraction = event.detail.attractionName
+    const attractionTarget = document.querySelector("#myTripAttraction")
+    attractionTarget.innerHTML = `Attraction: ${chosenAttraction}`
+})
