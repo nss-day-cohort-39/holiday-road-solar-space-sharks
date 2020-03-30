@@ -10,6 +10,8 @@ import { RenderAttractionsSelectComponent } from "./attractions/AttractionSelect
 import "./attractions/AttractionSelectDropdown.js"
 import { RenderFoodSelectComponent } from "./foods/FoodSelectComponent.js";
 //fetch the data from our local parks API, then render the drop-down menu with the list of parks
+import "./weather/weatherProvider.js"
+import "./weather/WeatherComponent.js"
 getParks().then(RenderParksSelectComponent)
     .then(getFoods)
     .then(RenderFoodSelectComponent)
