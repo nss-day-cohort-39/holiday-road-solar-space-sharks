@@ -19,8 +19,11 @@ export const RenderMyTripViewContainers = () => {
     `
 }
 
+
 //when the "save park button" is clicked, get the chosen parkCode and insert it into the myTripPark section on the DOM
 eventHub.addEventListener("saveParkButtonClicked", event => {
+    RenderMyTripViewContainers()
+
     const parks = useParks()
     chosenParkCode = event.detail.parkCode
     const chosenParkObject = parks.find(park => park.parkCode === chosenParkCode)
