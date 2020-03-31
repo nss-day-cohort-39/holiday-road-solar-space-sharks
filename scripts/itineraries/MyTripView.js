@@ -18,9 +18,26 @@ export const RenderMyTripViewContainers = () => {
     <section id="myTripFood"></section>
     <section id="myTripAttraction"></section>
     <div class="saveTripButtonContainer">
-        <button id="saveCompleteTrip">Save to My Trips</button>
+       
     </div>
     `
+}
+
+// make sure save trip button doesn't render until all required fields are selected
+const checkSaveTripButtonRenderCondition = () => {
+  const buttonContainerElement = document.querySelector(
+    '.saveTripButtonContainer'
+  )
+
+  if (
+    chosenParkCode !== '' &&
+    chosenFoodId !== null &&
+    chosenAttractionId !== null
+  ) {
+    buttonContainerElement.innerHTML = `<button id="saveCompleteTrip">Save to My Trips</button>`
+  } else {
+    buttonContainerElement.innerHTML = ''
+  }
 }
 
 /* when the "save to my trips" button is clicked create a new trip
@@ -31,10 +48,9 @@ eventHub.addEventListener('click', event => {
     const newTripObj = {
       timestamp: Date.now(),
       parkCode: chosenParkCode,
-      foodId: chosenFoodId,
-      attractionId: chosenAttractionId
+      foodId: parseInt(chosenFoodId),
+      attractionId: parseInt(chosenAttractionId)
     }
-
     saveNewTrip(newTripObj)
   }
 })
@@ -49,6 +65,7 @@ eventHub.addEventListener('saveParkButtonClicked', event => {
 
   const parkTarget = document.querySelector('#myTripPark')
   parkTarget.innerHTML = `Park: ${chosenParkObject.name}`
+  checkSaveTripButtonRenderCondition()
 })
 
 eventHub.addEventListener('saveAttractionButtonClicked', event => {
@@ -60,6 +77,7 @@ eventHub.addEventListener('saveAttractionButtonClicked', event => {
 
   const attractionTarget = document.querySelector('#myTripAttraction')
   attractionTarget.innerHTML = `Attraction: ${chosenAttractionObject.name}`
+  checkSaveTripButtonRenderCondition()
 })
 
 //when the "save food button" is clicked, get the chosen food ID and insert it into the myTripFood section on the DOM
@@ -70,4 +88,5 @@ eventHub.addEventListener('saveFoodButtonClicked', event => {
 
   const foodTarget = document.querySelector('#myTripFood')
   foodTarget.innerHTML = `Restaurant: ${chosenFoodObject.businessName}`
+  checkSaveTripButtonRenderCondition()
 })

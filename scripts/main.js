@@ -19,8 +19,9 @@ getParks()
   .then(RenderParksSelectComponent)
   .then(getFoods)
   .then(getAttractions)
-  .then(getTrips)
-  .then(RenderSavedTripsList)
+// .then(getTrips)
+
+getTrips().then(RenderSavedTripsList)
 
 //load the welcome components into the welcomeContainer on the DOM
 Welcome()
