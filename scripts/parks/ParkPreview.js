@@ -1,5 +1,4 @@
 import { RenderWeather } from "../weather/WeatherComponent.js"
-import { getWeather } from "../weather/weatherProvider.js"
 
 /*
     creates an HTML representation of the park details
