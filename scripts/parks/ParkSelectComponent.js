@@ -7,7 +7,7 @@ import { RenderWeather } from "../weather/WeatherComponent.js"
 import { getWeather } from "../weather/weatherProvider.js"
 
 const eventHub = document.querySelector('.container')
-const contentTarget = document.querySelector(".dropdownContainer")
+const contentTarget = document.querySelector(".dropdownContainer--parks")
 
 // export the initial page rendering of the Park Select Dropdown
 export const RenderParksSelectComponent = () => {

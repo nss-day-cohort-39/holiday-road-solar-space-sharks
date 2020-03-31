@@ -3,19 +3,20 @@ import { useFoods } from "./foodProvider.js"
 import { FoodSelectDropdown } from "./FoodSelectDropdown.js"
 import { FoodPreview } from "./FoodPreview.js"
 import { SaveFoodButton } from "../buttons/SaveFoodToTripButton.js"
+import { useParks } from "../parks/parkProvider.js"
 
 const eventHub = document.querySelector('.container')
-const contentTarget = document.querySelector(".dropdownContainer")
+const contentTarget = document.querySelector(".dropdownContainer--food")
 
 // export the initial page rendering of the Food Select Dropdown
 export const RenderFoodSelectComponent = () => {
-    render()
+
 }
 
 // function that pulls the food data and iterates each restaurant to display the Food dropdown HTML rep. 
-const render = () => {
-    const foods = useFoods()
-    contentTarget.innerHTML += FoodSelectDropdown(foods)
+const render = (filteredFoods) => {
+
+    contentTarget.innerHTML = FoodSelectDropdown(filteredFoods)
 
     contentTarget.innerHTML += `
     <section id="foodPreview"></section>
@@ -25,6 +26,26 @@ const render = () => {
     contentTarget.innerHTML += ViewMyTripButton()
 
 }
+
+eventHub.addEventListener("parkDropDownChanged", event => {
+    //list of all the parks
+    const parks = useParks()
+
+    //list of all the foods
+    const foods = useFoods()
+
+    //park code the user chose from the drop-down
+    const chosenParkCode = event.detail.parkCode
+
+    const chosenParkObject = parks.find(park => park.parkCode === chosenParkCode)
+
+    const chosenParkState = chosenParkObject.states
+
+    const filteredFoods = foods.filter(food => food.state === chosenParkState)
+
+    render(filteredFoods)
+
+})
 
 eventHub.addEventListener("foodDropDownChanged", event => {
     const contentTarget = document.querySelector("#foodPreview")
