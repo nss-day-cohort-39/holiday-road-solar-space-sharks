@@ -1,5 +1,20 @@
 {
-  "trips": [],
+  "trips": [
+    {
+      "timestamp": 1585683184332,
+      "parkCode": "gari",
+      "foodId": 50,
+      "attractionId": 49,
+      "id": 1
+    },
+    {
+      "timestamp": 1585683194400,
+      "parkCode": "gari",
+      "foodId": 50,
+      "attractionId": 49,
+      "id": 2
+    }
+  ],
   "parks": [
     {
       "contacts": {

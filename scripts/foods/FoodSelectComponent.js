@@ -3,7 +3,7 @@ import { useFoods } from "./foodProvider.js"
 import { FoodSelectDropdown } from "./FoodSelectDropdown.js"
 import { FoodPreview } from "./FoodPreview.js"
 import { SaveFoodButton } from "../buttons/SaveFoodToTripButton.js"
-import { useParks } from "../parks/parkProvider.js"
+import { useParksByState } from "../parks/parkProvider.js"
 
 const eventHub = document.querySelector('.container')
 const contentTarget = document.querySelector(".dropdownContainer--food")
@@ -29,7 +29,7 @@ const render = (filteredFoods) => {
 
 eventHub.addEventListener("parkDropDownChanged", event => {
     //list of all the parks
-    const parks = useParks()
+    const parks = useParksByState()
 
     //list of all the foods
     const foods = useFoods()

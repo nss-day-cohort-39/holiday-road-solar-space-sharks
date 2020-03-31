@@ -1,8 +1,8 @@
 import { getAttractions } from './attractions/attractionProvider.js'
 import { getFoods } from './foods/foodProvider.js'
-import { getParks } from './parks/parkProvider.js'
+// import { getParks } from './parks/parkProvider.js'
 import { Welcome } from './homePage/Welcome.js'
-import { RenderParksSelectComponent } from './parks/ParkSelectComponent.js'
+// import { RenderParksSelectComponent } from './parks/ParkSelectComponent.js'
 import './AppController.js'
 import './itineraries/MyTripView.js'
 import { RenderMyTripViewContainers } from './itineraries/MyTripView.js'
@@ -15,13 +15,13 @@ import './weather/weatherProvider.js'
 import './weather/WeatherComponent.js'
 import { getTrips } from './itineraries/savedTripsProvider.js'
 import { RenderSavedTripsList } from './itineraries/SavedTripsList.js'
-getParks()
-  .then(RenderParksSelectComponent)
-  .then(getFoods)
-  .then(getAttractions)
+// getParks()
+  // .then(RenderParksSelectComponent)
+  getFoods()
+  getAttractions()
 // .then(getTrips)
 
-getTrips().then(RenderSavedTripsList)
+//getTrips().then(RenderSavedTripsList)
 
 //load the welcome components into the welcomeContainer on the DOM
 Welcome()

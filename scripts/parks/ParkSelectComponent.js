@@ -1,4 +1,4 @@
-import { useParks } from "./parkProvider.js"
+import { useParksByState, getParksByState } from "./parkProvider.js"
 import { ParkSelectDropdown } from "./ParkSelectDropdown.js"
 import { SaveParkButton } from "../buttons/SaveParkToTripButton.js"
 import { ParkPreview } from "./ParkPreview.js"
@@ -10,13 +10,21 @@ const eventHub = document.querySelector('.container')
 const contentTarget = document.querySelector(".dropdownContainer--parks")
 
 // export the initial page rendering of the Park Select Dropdown
-export const RenderParksSelectComponent = () => {
-    render()
-}
+// export const RenderParksSelectComponent = () => {
+//     render()
+// }
+
+eventHub.addEventListener("newTripBtnWasClicked" , event => {
+    const state = event.detail.stateCode 
+    render(state)
+})
 
 // function that pulls the parks data and iterates each park to display the Park dropdown HTML rep. 
-const render = () => {
-    const parks = useParks()
+const render = (state) => {
+    getParksByState(state)
+        .then(() => { 
+
+    const parks = useParksByState()
     contentTarget.innerHTML = ParkSelectDropdown(parks)
 
     contentTarget.innerHTML += `
@@ -26,13 +34,13 @@ const render = () => {
     contentTarget.innerHTML += SaveParkButton()
 
     contentTarget.innerHTML += ViewMyTripButton()
-
+    })
 }
 
 eventHub.addEventListener("parkDropDownChanged", event => {
     const contentTarget = document.querySelector("#parkPreview")
 
-    const parks = useParks()
+    const parks = useParksByState()
 
     //get the value of the parkCode that the user chose
     let parkSelectDropdownValue = document.getElementById("parkSelectDropdown").value
@@ -44,3 +52,4 @@ eventHub.addEventListener("parkDropDownChanged", event => {
         contentTarget.innerHTML = ParkPreview(foundPark)
     })
 })
+

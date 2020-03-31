@@ -3,7 +3,7 @@ import { AttractionSelectDropdown } from "./AttractionSelectDropdown.js"
 import { AttractionPreview } from "./AttractionPreview.js"
 import { SaveAttractionButton } from "../buttons/SaveAttractionToTripButton.js"
 import { ViewMyTripButton } from "../buttons/ViewMyTripButton.js"
-import { useParks } from "../parks/parkProvider.js"
+import { useParksByState } from "../parks/parkProvider.js"
 
 const eventHub = document.querySelector('.container')
 const contentTarget = document.querySelector(".dropdownContainer--attraction")
@@ -31,7 +31,7 @@ const render = (filteredAttractions) => {
 
 eventHub.addEventListener("parkDropDownChanged", event => {
     //list of all the parks
-    const parks = useParks()
+    const parks = useParksByState()
 
     //list of all the attractions
     const attractions = useAttractions()

@@ -1,4 +1,4 @@
-import { useParks } from '../parks/parkProvider.js'
+import { useParksByState } from '../parks/parkProvider.js'
 import { useAttractions } from '../attractions/attractionProvider.js'
 import { useFoods } from '../foods/foodProvider.js'
 import { saveNewTrip } from './savedTripsProvider.js'
@@ -63,7 +63,7 @@ eventHub.addEventListener('saveParkButtonClicked', event => {
   chosenFoodId = null
   chosenAttractionId = null
 
-  const parks = useParks()
+  const parks = useParksByState()
   chosenParkCode = event.detail.parkCode
   const chosenParkObject = parks.find(park => park.parkCode === chosenParkCode)
 

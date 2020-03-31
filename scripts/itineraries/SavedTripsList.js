@@ -1,7 +1,7 @@
 import { useTrips } from './savedTripsProvider.js'
 import { SavedTrip } from './SavedTrip.js'
 import { getFoods } from '../foods/foodProvider.js'
-import { getParks } from '../parks/parkProvider.js'
+import { getParksByParkCode } from '../parks/parkProvider.js'
 import { getAttractions } from '../attractions/attractionProvider.js'
 
 const eventHub = document.querySelector('.container')
@@ -16,7 +16,7 @@ export const RenderSavedTripsList = () => {
 
 // create a render function that renders the saved trips
 const render = () => {
-  getParks()
+  getParksByParkCode()
     .then(getFoods)
     .then(getAttractions)
     .then(() => {
