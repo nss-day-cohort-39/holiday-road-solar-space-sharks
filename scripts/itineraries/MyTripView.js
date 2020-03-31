@@ -7,8 +7,8 @@ const contentTarget = document.querySelector('.previewContainer')
 
 //create the default values for the trip
 let chosenParkCode = ""
-let chosenFoodId = ""
-let chosenAttractionId = ""
+let chosenFoodId = null
+let chosenAttractionId = null
 
 //initial render of the three sections inside of previewContainer on the DOM
 export const RenderMyTripViewContainers = () => {
