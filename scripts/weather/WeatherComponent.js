@@ -1,47 +1,44 @@
-import { useWeather, getWeather } from "./weatherProvider.js";
-import { useParks } from "../parks/parkProvider.js";
+import { useWeather } from "./weatherProvider.js";
 
+const getDayOfTheWeek = (timestamp) => {
+    const dayText = [
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday'
+    ]
 
-const eventHub = document.querySelector('.container')
+    //convert the timestamp into a JavaScript date
+    const date = new Date(timestamp * 1000);
 
-eventHub.addEventListener("parkDropDownChanged", event => {
-    const parkId = event.detail.parkCode
-    const parks = useParks()
-    const foundPark = parks.find(park => park.parkCode === parkId)
-    RenderWeather(foundPark)
-})
-const RenderWeather = (parkObject) => {
-    const contentTarget = document.querySelector(".weather")
-    getWeather(parkObject.latitude, parkObject.longitude).then(() => {
-        const weather = useWeather()
-        contentTarget.innerHTML = ""
-        weather.forEach(day => {
-            const [date, time] = day.dt_txt.split(" ")
-            const fahrenheit = Math.floor((day.main.temp -273)*(9/5) + 32)
-            console.log(weather)
-            if (time === "12:00:00") {
-                contentTarget.innerHTML += `
+    //returns the day of the week in number format (ex: 0=Sun, 2=Tue, etc.)
+    const day = date.getDay()
+
+    return dayText[day]
+}
+
+export const RenderWeather = () => {
+    let weatherHTML = ""
+    const weather = useWeather()
+
+    //filters the weather to get data from noon of each day
+    const filteredWeather = weather.filter(day => day.dt_txt.split(" ")[1] === "12:00:00")
+
+    filteredWeather.map(day => {
+
+        const fahrenheit = Math.floor((day.main.temp - 273) * (9 / 5) + 32)
+
+        weatherHTML += `
                 <div class="weatherTable">
-                    <div class="weatherDate">${date}</div>
+                    <div class="weatherDate">${getDayOfTheWeek(day.dt)}</div>
                     <div class="weatherIcon"><img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png"></div>
                     <div class="weatherTemp">${fahrenheit}</div>
                 </div>
                 `
-            }
-        });
-    })
-    // weather.map(day => {
-    //     const [date, time] = day.dt_txt.split(" ")
-        
-    //     if (time === "12:00:00") {
-    //         return `
-    //         <div class="weatherTemp">${day.main.temp}</div>
-    //         `
-    //     }
-    // }).join("")
+    }).join("")
+
+    return weatherHTML
 }
-
-
-
-/* <div class="weatherDate">${date}</div>
-<div class="weatherIcon"><img src="http://openweathermap.org/img/wn/${day.weather.icon}@1x.png" /></div> */

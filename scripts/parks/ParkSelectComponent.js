@@ -3,6 +3,8 @@ import { ParkSelectDropdown } from "./ParkSelectDropdown.js"
 import { SaveParkButton } from "../buttons/SaveParkToTripButton.js"
 import { ParkPreview } from "./ParkPreview.js"
 import { ViewMyTripButton } from "../buttons/ViewMyTripButton.js"
+import { RenderWeather } from "../weather/WeatherComponent.js"
+import { getWeather } from "../weather/weatherProvider.js"
 
 const eventHub = document.querySelector('.container')
 const contentTarget = document.querySelector(".dropdownContainer")
@@ -19,7 +21,6 @@ const render = () => {
 
     contentTarget.innerHTML += `
     <section id="parkPreview">
-        <div class="weather"></div>
     </section>
     `
     contentTarget.innerHTML += SaveParkButton()
@@ -38,6 +39,8 @@ eventHub.addEventListener("parkDropDownChanged", event => {
 
     const foundPark = parks.find(park => park.parkCode === parkSelectDropdownValue)
 
-    //show the details of the park
-    contentTarget.innerHTML = ParkPreview(foundPark)
+    //get the weather data for the park location, then render the park preview into the content target
+    getWeather(foundPark.latitude, foundPark.longitude).then(() => {
+        contentTarget.innerHTML = ParkPreview(foundPark)
+    })
 })
