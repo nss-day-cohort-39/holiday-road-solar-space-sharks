@@ -26,4 +26,4 @@ export const saveNewTrip = newTripObject => {
     .then(dispatchTripSavedEvent)
 }
 
-export const useItineraries = () => savedTrips.slice()
+export const useTrips = () => savedTrips.slice()

@@ -6,6 +6,13 @@
       "foodId": "23",
       "attractionId": "22",
       "id": 1
+    },
+    {
+      "timestamp": 1585674633273,
+      "parkCode": "cane",
+      "foodId": "19",
+      "attractionId": "18",
+      "id": 2
     }
   ],
   "parks": [

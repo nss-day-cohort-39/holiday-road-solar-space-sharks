@@ -1,7 +1,7 @@
 import { useParks } from '../parks/parkProvider.js'
 import { useAttractions } from '../attractions/attractionProvider.js'
 import { useFoods } from '../foods/foodProvider.js'
-import { saveNewTrip } from './savedItinerariesProvider.js'
+import { saveNewTrip } from './savedTripsProvider.js'
 
 const eventHub = document.querySelector('.container')
 const contentTarget = document.querySelector('.previewContainer')
