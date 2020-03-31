@@ -59,6 +59,10 @@ eventHub.addEventListener('click', event => {
 eventHub.addEventListener('saveParkButtonClicked', event => {
   RenderMyTripViewContainers()
 
+  //reset the chosen food and attraction options when save button is clicked
+  chosenFoodId = null
+  chosenAttractionId = null
+
   const parks = useParks()
   chosenParkCode = event.detail.parkCode
   const chosenParkObject = parks.find(park => park.parkCode === chosenParkCode)

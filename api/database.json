@@ -1,48 +1,5 @@
 {
-  "trips": [
-    {
-      "timestamp": 1585672465826,
-      "parkCode": "caco",
-      "foodId": 23,
-      "attractionId": 22,
-      "id": 1
-    },
-    {
-      "timestamp": 1585674633273,
-      "parkCode": "cane",
-      "foodId": 19,
-      "attractionId": 18,
-      "id": 2
-    },
-    {
-      "timestamp": 1585679067594,
-      "parkCode": "bepa",
-      "foodId": 10,
-      "attractionId": 8,
-      "id": 3
-    },
-    {
-      "timestamp": 1585680417991,
-      "parkCode": "long",
-      "foodId": 23,
-      "attractionId": 22,
-      "id": 4
-    },
-    {
-      "timestamp": 1585681574386,
-      "parkCode": "afam",
-      "foodId": 10,
-      "attractionId": 8,
-      "id": 5
-    },
-    {
-      "timestamp": 1585681971547,
-      "parkCode": "saan",
-      "foodId": 45,
-      "attractionId": 44,
-      "id": 6
-    }
-  ],
+  "trips": [],
   "parks": [
     {
       "contacts": {
