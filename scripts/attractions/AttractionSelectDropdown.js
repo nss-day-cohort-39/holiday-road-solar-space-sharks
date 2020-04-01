@@ -8,7 +8,7 @@ export const AttractionSelectDropdown = (allTheAttractions) => {
             <option value="0">Please Choose an Attraction</option>
             ${
                 allTheAttractions.map(oneAttraction => {
-                    return `<option id="attractionOption--${oneAttraction.id}" value="${oneAttraction.id}">${oneAttraction.name} - ${oneAttraction.city}</option>`
+                    return `<option id="attractionOption--${oneAttraction.id}" value="${oneAttraction.id}">${oneAttraction.name} - ${oneAttraction.state}</option>`
                 }).join("")
             }
         </select>

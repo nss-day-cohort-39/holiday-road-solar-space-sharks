@@ -6,7 +6,7 @@ export const getParksByState = (stateCode) => {
     return fetch(`https://developer.nps.gov/api/v1/parks?stateCode=${stateCode}&api_key=${keys.npsKey}`)
         .then(response => response.json())
         .then(parsedParks => {
-            parksByState = parsedParks
+            parksByState = parsedParks.data
         })
 }
 export const useParksByState = () => parksByState.slice()
@@ -17,7 +17,7 @@ export const getParksByParkCode = (parkCode) => {
     return fetch(`https://developer.nps.gov/api/v1/parks?parkCode=${parkCode}&api_key=${keys.npsKey}`)
         .then(response => response.json())
         .then(parsedParks => {
-            parksByParkCode = parsedParks
+            parksByParkCode = parsedParks.data
         })
 }
 

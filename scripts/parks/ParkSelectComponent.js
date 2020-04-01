@@ -9,18 +9,15 @@ import { getWeather } from "../weather/weatherProvider.js"
 const eventHub = document.querySelector('.container')
 const contentTarget = document.querySelector(".dropdownContainer--parks")
 
-// export the initial page rendering of the Park Select Dropdown
-// export const RenderParksSelectComponent = () => {
-//     render()
-// }
-
 eventHub.addEventListener("newTripBtnWasClicked" , event => {
     const state = event.detail.stateCode 
+    
     render(state)
 })
 
 // function that pulls the parks data and iterates each park to display the Park dropdown HTML rep. 
 const render = (state) => {
+    
     getParksByState(state)
         .then(() => { 
 
@@ -48,8 +45,13 @@ eventHub.addEventListener("parkDropDownChanged", event => {
     const foundPark = parks.find(park => park.parkCode === parkSelectDropdownValue)
 
     //get the weather data for the park location, then render the park preview into the content target
-    getWeather(foundPark.latitude, foundPark.longitude).then(() => {
-        contentTarget.innerHTML = ParkPreview(foundPark)
-    })
+    if (foundPark.latitude !== "") {
+        getWeather(foundPark.latitude, foundPark.longitude).then(() => {
+            contentTarget.innerHTML = ParkPreview(foundPark)
+        })
+    } else {
+        contentTarget.innerHTML = ParkPreview(foundPark) 
+    }
 })
+
 

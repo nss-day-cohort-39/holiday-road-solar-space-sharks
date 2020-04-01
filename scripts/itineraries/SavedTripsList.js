@@ -1,4 +1,4 @@
-import { useTrips } from './savedTripsProvider.js'
+import { useTrips, getTrips } from './savedTripsProvider.js'
 import { SavedTrip } from './SavedTrip.js'
 import { getFoods } from '../foods/foodProvider.js'
 import { getParksByParkCode } from '../parks/parkProvider.js'
@@ -9,21 +9,26 @@ const eventHub = document.querySelector('.container')
 // get a reference to the trip container in the DOM
 const contentTarget = document.querySelector('.savedTripsContainer')
 
-// create and export a function that renders the saved trips into the saved trips container
-export const RenderSavedTripsList = () => {
-  render()
-}
+eventHub.addEventListener("mySavedTripsBtnWasClicked", event => render())
 
 // create a render function that renders the saved trips
 const render = () => {
-  getParksByParkCode()
+  getTrips().then(() => {
+
+  const trips = useTrips()
+  // iterate all trips in database.json and return a string of all Park Codes separated by a comma
+  const stringOfParkCodes = trips.map(trip => {
+    return trip.parkCode
+  }).join(",")
+
+  // query all parks on park website and return array of park objects that match codes passed in "stringOfCodes"
+  getParksByParkCode(stringOfParkCodes)
     .then(getFoods)
     .then(getAttractions)
     .then(() => {
-      const trips = useTrips()
-
       contentTarget.innerHTML = trips.map(trip => SavedTrip(trip)).join('<hr>')
     })
+  })
 }
 
 eventHub.addEventListener('tripWasSaved', () => {

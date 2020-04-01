@@ -9,8 +9,6 @@ const states = [
 
 export const StateSelectDropdown = () => {
 
-  
-
     return `
         <select id="stateSelectDropdown">
             <option value="0">Where to next?</option>
