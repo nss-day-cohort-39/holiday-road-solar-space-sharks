@@ -1,5 +1,11 @@
 {
   "trips": [
-  
+    {
+      "timestamp": 1585766354317,
+      "parkCode": "bicr",
+      "foodId": 2,
+      "attractionId": 1,
+      "id": 1
+    }
   ]
 }

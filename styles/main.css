@@ -2,3 +2,7 @@
     display: flex;
     flex-flow: row nowrap;
 }
+
+.hidden {
+    display: none;
+}
