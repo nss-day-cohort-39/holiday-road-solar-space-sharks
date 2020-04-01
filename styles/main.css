@@ -1,4 +1,92 @@
-.weather {
-    display: flex;
-    flex-flow: row nowrap;
+@import url('./myTripPreview.css');
+@import url('./savedTrips.css');
+@import url('./weather.css');
+@import url('./parks.css');
+@import url('./mediaqueries.css');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+/* Top Level Styling */
+
+body {
+    background-color: #c6e7db;
+    color: #2b402b;
+}
+
+select {
+    font-size: 1.15em;
+    font-family: 'Raleway', sans-serif;
+    width: 100%;
+    height: 50px;
+    max-width: 400px;
+    padding: .5em;
+    border-radius: 5px;
+}
+
+button {
+    cursor: pointer;
+    height: 50px;
+    min-width: 60px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1em;
+    background-color: #32645a;
+    color: #f3fff3;
+    padding: .5em;
+    margin: 0 .5em 0 .5em;
+    border: 0;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #358877;
+}
+
+button:active {
+    background-color: #7b645b;
+}
+
+.hidden {
+    display: none;
+}
+
+.container {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    font-size: 1.15em;
+}
+
+.previewProperties {
+    background-color: #ffffff;
+    padding: 1em;
+    margin: 1em auto 1em auto;
+    max-width: 500px;
+}
+
+.constantWiggle {
+    animation: wiggle;
+    animation-duration: 300ms;
+    animation-iteration-count: infinite;
+}
+
+.hoverVanIcon:hover {
+    animation: wiggle;
+    animation-duration: 300ms;
+    animation-iteration-count: infinite;
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotate(4deg);
+    }
+    25% {
+        transform: rotate(-4deg);
+    }
+    50% {
+        transform: rotate(8deg);
+    }
+    75% {
+        transform: rotate(-4deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }

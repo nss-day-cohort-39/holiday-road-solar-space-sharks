@@ -1,5 +1,46 @@
 {
   "trips": [
-  
+    {
+      "timestamp": 1585766354317,
+      "parkCode": "bicr",
+      "foodId": 2,
+      "attractionId": 1,
+      "id": 1
+    },
+    {
+      "timestamp": 1585771335729,
+      "parkCode": "bicr",
+      "foodId": 2,
+      "attractionId": 1,
+      "id": 2
+    },
+    {
+      "timestamp": 1585772347223,
+      "parkCode": "bicr",
+      "foodId": 2,
+      "attractionId": 1,
+      "id": 3
+    },
+    {
+      "timestamp": 1585772707601,
+      "parkCode": "bicr",
+      "foodId": 2,
+      "attractionId": 1,
+      "id": 4
+    },
+    {
+      "timestamp": 1585772841557,
+      "parkCode": "bicr",
+      "foodId": 2,
+      "attractionId": 1,
+      "id": 5
+    },
+    {
+      "timestamp": 1585773321356,
+      "parkCode": "bicr",
+      "foodId": 2,
+      "attractionId": 1,
+      "id": 6
+    }
   ]
 }

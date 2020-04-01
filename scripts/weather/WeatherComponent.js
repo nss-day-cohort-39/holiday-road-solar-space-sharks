@@ -34,8 +34,8 @@ export const RenderWeather = () => {
         weatherHTML += `
                 <div class="weatherTable">
                     <div class="weatherDate">${getDayOfTheWeek(day.dt)}</div>
-                    <div class="weatherIcon"><img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png"></div>
-                    <div class="weatherTemp">${fahrenheit}</div>
+                    <div class="weatherIcon"><img class="weatherIconImage" src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png"></div>
+                    <div class="weatherTemp">${fahrenheit}&deg;</div>
                 </div>
                 `
     }).join("")

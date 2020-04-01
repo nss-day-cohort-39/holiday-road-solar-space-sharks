@@ -1,0 +1,19 @@
+.previewContainer {
+    background-color: #fff6c9;
+    color: #884426;
+    max-width: 500px;
+    padding: 1em;
+    margin: 1em auto 1em auto;
+}
+
+.previewChoice {
+    text-align: left;
+    font-size: 1.15em;
+    margin-bottom: .25em;
+    background-color: rgba(236, 196, 161, 0.8);
+    padding: 1em;
+}
+
+.previewChoice__label {
+    font-weight: bold;
+}

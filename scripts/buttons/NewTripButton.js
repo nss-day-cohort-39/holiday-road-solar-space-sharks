@@ -4,7 +4,7 @@ const eventHub = document.querySelector('.container')
 export const NewTripButton = () => {
     // return a string of HTML for a button
     return `
-    <button class="newTripBtn">Start a New Trip!</button> 
+    <button class="newTripBtn">Go!</button> 
   `
 }
 
@@ -17,7 +17,7 @@ eventHub.addEventListener('click', clickEvent => {
         const newTripBtnClickEvent = new CustomEvent('newTripBtnWasClicked', {
             detail: {
                 stateCode: stateCodeTarget
-            }            
+            }
         })
         eventHub.dispatchEvent(newTripBtnClickEvent)
     }

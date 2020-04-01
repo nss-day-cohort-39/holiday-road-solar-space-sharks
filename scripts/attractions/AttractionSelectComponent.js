@@ -21,7 +21,7 @@ const render = (filteredAttractions) => {
     contentTarget.innerHTML = AttractionSelectDropdown(filteredAttractions)
 
     contentTarget.innerHTML += `
-    <section id="attractionPreview"></section>
+    <section id="attractionPreview" class="previewProperties"></section>
     `
     contentTarget.innerHTML += SaveAttractionButton()
 
@@ -31,30 +31,30 @@ const render = (filteredAttractions) => {
 
 eventHub.addEventListener("parkDropDownChanged", event => {
     getAttractions().then(() => {
-    
-    //list of all the parks
-    const parks = useParksByState()
 
-    //list of all the attractions
-    const attractions = useAttractions()
+        //list of all the parks
+        const parks = useParksByState()
 
-    //park code the user chose from the drop-down
-    const chosenParkCode = event.detail.parkCode
+        //list of all the attractions
+        const attractions = useAttractions()
 
-    const chosenParkObject = parks.find(park => park.parkCode === chosenParkCode)
+        //park code the user chose from the drop-down
+        const chosenParkCode = event.detail.parkCode
 
-    const chosenParkStates = chosenParkObject.states
-     // creating a workable array of states from the string of states
-     const chosenParkStatesArray = chosenParkStates.split(",")
-    
-     // iterate over array of states (within a park) and add each attraction within those states to filtered attractions array 
-     let filteredAttractions = []
-     for (const state of chosenParkStatesArray) {
-         const foundAttractions = attractions.filter(attraction => attraction.state === state)
-         Array.prototype.push.apply(filteredAttractions,foundAttractions)
-     }    
+        const chosenParkObject = parks.find(park => park.parkCode === chosenParkCode)
 
-    render(filteredAttractions)
+        const chosenParkStates = chosenParkObject.states
+            // creating a workable array of states from the string of states
+        const chosenParkStatesArray = chosenParkStates.split(",")
+
+        // iterate over array of states (within a park) and add each attraction within those states to filtered attractions array 
+        let filteredAttractions = []
+        for (const state of chosenParkStatesArray) {
+            const foundAttractions = attractions.filter(attraction => attraction.state === state)
+            Array.prototype.push.apply(filteredAttractions, foundAttractions)
+        }
+
+        render(filteredAttractions)
 
     })
 })
