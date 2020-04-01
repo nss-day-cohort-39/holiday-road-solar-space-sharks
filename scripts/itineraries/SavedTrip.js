@@ -1,4 +1,4 @@
-import { useParks } from '../parks/parkProvider.js'
+import { useParksByParkCode } from '../parks/parkProvider.js'
 import { useFoods } from '../foods/foodProvider.js'
 import { useAttractions } from '../attractions/attractionProvider.js'
 
@@ -6,7 +6,7 @@ import { useAttractions } from '../attractions/attractionProvider.js'
 Create a function that returns an html representation of a saved trip
 */
 export const SavedTrip = tripObject => {
-  const parks = useParks()
+  const parks = useParksByParkCode()
   const chosenPark = parks.find(park => park.parkCode === tripObject.parkCode)
 
   const foods = useFoods()

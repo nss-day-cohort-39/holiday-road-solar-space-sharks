@@ -13,7 +13,12 @@ event to the system telling it to listen for when the new
 trip button was clicked */
 eventHub.addEventListener('click', clickEvent => {
     if (clickEvent.target.classList.contains('newTripBtn')) {
-        const newTripBtnClickEvent = new CustomEvent('newTripBtnWasClicked')
+        const stateCodeTarget = document.querySelector("#stateSelectDropdown").value
+        const newTripBtnClickEvent = new CustomEvent('newTripBtnWasClicked', {
+            detail: {
+                stateCode: stateCodeTarget
+            }            
+        })
         eventHub.dispatchEvent(newTripBtnClickEvent)
     }
 })

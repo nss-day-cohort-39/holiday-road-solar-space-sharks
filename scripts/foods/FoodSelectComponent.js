@@ -1,9 +1,9 @@
 import { ViewMyTripButton } from "../buttons/ViewMyTripButton.js"
-import { useFoods } from "./foodProvider.js"
+import { useFoods, getFoods } from "./foodProvider.js"
 import { FoodSelectDropdown } from "./FoodSelectDropdown.js"
 import { FoodPreview } from "./FoodPreview.js"
 import { SaveFoodButton } from "../buttons/SaveFoodToTripButton.js"
-import { useParks } from "../parks/parkProvider.js"
+import { useParksByState } from "../parks/parkProvider.js"
 
 const eventHub = document.querySelector('.container')
 const contentTarget = document.querySelector(".dropdownContainer--food")
@@ -28,23 +28,35 @@ const render = (filteredFoods) => {
 }
 
 eventHub.addEventListener("parkDropDownChanged", event => {
-    //list of all the parks
-    const parks = useParks()
+    getFoods().then(() => {
+
+    
+    //list of all the parks by state
+    const parks = useParksByState()
 
     //list of all the foods
     const foods = useFoods()
 
     //park code the user chose from the drop-down
     const chosenParkCode = event.detail.parkCode
-
+    //return a park object = the park code we chose in the park dropdown
     const chosenParkObject = parks.find(park => park.parkCode === chosenParkCode)
 
-    const chosenParkState = chosenParkObject.states
-
-    const filteredFoods = foods.filter(food => food.state === chosenParkState)
+    // pull states property from chosen park object in the form of a string
+    const chosenParkStates = chosenParkObject.states
+    // creating a workable array of states from the string of states
+    const chosenParkStatesArray = chosenParkStates.split(",")
+    
+    // iterate over array of states (within a park) and add each restaurant within those states to filtered foods array 
+    let filteredFoods = []
+    for (const state of chosenParkStatesArray) {
+        const foundFood = foods.filter(food => food.state === state)
+        Array.prototype.push.apply(filteredFoods,foundFood)
+    }    
 
     render(filteredFoods)
 
+    })
 })
 
 eventHub.addEventListener("foodDropDownChanged", event => {

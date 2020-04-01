@@ -1,9 +1,9 @@
-import { useAttractions } from "./attractionProvider.js"
+import { useAttractions, getAttractions } from "./attractionProvider.js"
 import { AttractionSelectDropdown } from "./AttractionSelectDropdown.js"
 import { AttractionPreview } from "./AttractionPreview.js"
 import { SaveAttractionButton } from "../buttons/SaveAttractionToTripButton.js"
 import { ViewMyTripButton } from "../buttons/ViewMyTripButton.js"
-import { useParks } from "../parks/parkProvider.js"
+import { useParksByState } from "../parks/parkProvider.js"
 
 const eventHub = document.querySelector('.container')
 const contentTarget = document.querySelector(".dropdownContainer--attraction")
@@ -30,8 +30,10 @@ const render = (filteredAttractions) => {
 }
 
 eventHub.addEventListener("parkDropDownChanged", event => {
+    getAttractions().then(() => {
+    
     //list of all the parks
-    const parks = useParks()
+    const parks = useParksByState()
 
     //list of all the attractions
     const attractions = useAttractions()
@@ -41,12 +43,20 @@ eventHub.addEventListener("parkDropDownChanged", event => {
 
     const chosenParkObject = parks.find(park => park.parkCode === chosenParkCode)
 
-    const chosenParkState = chosenParkObject.states
-
-    const filteredAttractions = attractions.filter(attraction => attraction.state === chosenParkState)
+    const chosenParkStates = chosenParkObject.states
+     // creating a workable array of states from the string of states
+     const chosenParkStatesArray = chosenParkStates.split(",")
+    
+     // iterate over array of states (within a park) and add each attraction within those states to filtered attractions array 
+     let filteredAttractions = []
+     for (const state of chosenParkStatesArray) {
+         const foundAttractions = attractions.filter(attraction => attraction.state === state)
+         Array.prototype.push.apply(filteredAttractions,foundAttractions)
+     }    
 
     render(filteredAttractions)
 
+    })
 })
 
 eventHub.addEventListener("attractionDropDownChanged", event => {
