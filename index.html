@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Remote-ly</title>
     <link rel="stylesheet" href="./styles/main.css" />
-  </head>
+</head>
 
-  <body>
+<body>
     <main class="container">
-      <article class="welcomeContainer"></article>
-      <article class="dropdownContainer">
-        <section class="dropdownContainer--parks"></section>
-        <section class="dropdownContainer--food"></section>
-        <section class="dropdownContainer--attraction"></section>
-      </article>
-      <article class="previewContainer"></article>
-      <article class="savedTripsContainer"></article>
+        <div id="loading" class="hidden">
+            <img class="constantWiggle" src="images/van_icon.png" />
+            <p>Loading...</p>
+        </div>
+        <article class="welcomeContainer"></article>
+        <article class="dropdownContainer">
+            <section class="dropdownContainer--parks"></section>
+            <section class="dropdownContainer--food"></section>
+            <section class="dropdownContainer--attraction"></section>
+        </article>
+        <article class="previewContainer"></article>
+        <article class="savedTripsContainer"></article>
     </main>
     <script type="module" src="./scripts/main.js"></script>
-  </body>
+</body>
+
 </html>

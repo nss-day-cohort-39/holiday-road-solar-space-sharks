@@ -11,7 +11,8 @@ export const Welcome = () => {
     /* define the inner HTML of the content target and
     call the necessary button components */
     contentTarget.innerHTML = `
-  <h1>Welcome!</h1>
+  <h1>Welcome to Remote-ly!</h1>
+  <div><img class="hoverVanIcon" src="images/van_icon.png" /></div>
   ${StateSelectDropdown()}
   ${NewTripButton()}
   ${MySavedTripsButton()}

@@ -4,7 +4,7 @@ const eventHub = document.querySelector('.container')
 export const MySavedTripsButton = () => {
     // return an HTML string for a button
     return `
-    <button class="mySavedTripsBtn">View My Trips!</button> 
+    <div><button class="mySavedTripsBtn">View My Trips!</button></div> 
   `
 }
 

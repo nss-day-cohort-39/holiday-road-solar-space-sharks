@@ -47,6 +47,11 @@ eventHub.addEventListener("myTripButtonClicked", event => {
     pageStateChanged()
 })
 
+eventHub.addEventListener("saveCompleteTripButtonWasClicked", event => {
+    pageState = "savedTripsList"
+    pageStateChanged()
+})
+
 eventHub.addEventListener("mySavedTripsBtnWasClicked", event => {
     pageState = "savedTripsList"
     pageStateChanged()

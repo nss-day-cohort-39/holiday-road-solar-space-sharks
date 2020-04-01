@@ -9,29 +9,29 @@ import { getWeather } from "../weather/weatherProvider.js"
 const eventHub = document.querySelector('.container')
 const contentTarget = document.querySelector(".dropdownContainer--parks")
 
-eventHub.addEventListener("newTripBtnWasClicked" , event => {
-    const state = event.detail.stateCode 
-    
+eventHub.addEventListener("newTripBtnWasClicked", event => {
+    const state = event.detail.stateCode
+
     render(state)
 })
 
 // function that pulls the parks data and iterates each park to display the Park dropdown HTML rep. 
 const render = (state) => {
-    
+
     getParksByState(state)
-        .then(() => { 
+        .then(() => {
 
-    const parks = useParksByState()
-    contentTarget.innerHTML = ParkSelectDropdown(parks)
+            const parks = useParksByState()
+            contentTarget.innerHTML = ParkSelectDropdown(parks)
 
-    contentTarget.innerHTML += `
-    <section id="parkPreview">
+            contentTarget.innerHTML += `
+    <section id="parkPreview" class="previewProperties">
     </section>
     `
-    contentTarget.innerHTML += SaveParkButton()
+            contentTarget.innerHTML += SaveParkButton()
 
-    contentTarget.innerHTML += ViewMyTripButton()
-    })
+            contentTarget.innerHTML += ViewMyTripButton()
+        })
 }
 
 eventHub.addEventListener("parkDropDownChanged", event => {
@@ -50,8 +50,6 @@ eventHub.addEventListener("parkDropDownChanged", event => {
             contentTarget.innerHTML = ParkPreview(foundPark)
         })
     } else {
-        contentTarget.innerHTML = ParkPreview(foundPark) 
+        contentTarget.innerHTML = ParkPreview(foundPark)
     }
 })
-
-
