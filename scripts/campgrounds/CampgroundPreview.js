@@ -3,11 +3,10 @@
 */
 
 export const CampgroundPreview = (campObject) => {
-    const campgroundHoursEntrieArray = Object.entries(campObject.operatingHours[0].standardHours)
-    console.log(campgroundHoursEntrieArray)
-    return `
+        const campgroundHoursEntrieArray = Object.entries(campObject.operatingHours[0].standardHours)
+        return `
         <h2>${campObject.name}</h2>
-        <div>Address: ${campObject.addresses[0].line1} ${campObject.addresses[0].city}, ${campObject.addresses[0].stateCode} ${campObject.addresses[0].postalCode}</div>
+        ${campObject.hasOwnProperty("addresses") ? `<div>Address: ${campObject.addresses[0].line1} ${campObject.addresses[0].city}, ${campObject.addresses[0].stateCode} ${campObject.addresses[0].postalCode}</div>` : ``}
         <div class="campgroundHours>
             ${campgroundHoursEntrieArray.map(day => {
                 return `

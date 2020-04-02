@@ -11,7 +11,7 @@ const contentTarget = document.querySelector('.previewContainer')
 let chosenParkCode = ''
 let chosenFoodId = null
 let chosenAttractionId = null
-let chosenCampgroundId = ''
+let chosenCampgroundId = null
 
 //initial render of the three sections inside of previewContainer on the DOM
 export const RenderMyTripViewContainers = () => {
@@ -36,8 +36,7 @@ const checkSaveTripButtonRenderCondition = () => {
     if (
         chosenParkCode !== '' &&
         chosenFoodId !== null &&
-        chosenAttractionId !== null &&
-        chosenCampgroundId != ''
+        chosenAttractionId !== null
     ) {
         buttonContainerElement.innerHTML = `<button id="saveCompleteTrip">Save to My Trips</button>`
     } else {
@@ -57,7 +56,7 @@ eventHub.addEventListener('click', event => {
         const newTripObj = {
             timestamp: Date.now(),
             parkCode: chosenParkCode,
-            campgroundId: chosenCampgroundId,
+            campgroundId: parseInt(chosenCampgroundId),
             foodId: parseInt(chosenFoodId),
             attractionId: parseInt(chosenAttractionId)
         }
@@ -73,6 +72,7 @@ eventHub.addEventListener('saveParkButtonClicked', event => {
     //reset the chosen food and attraction options when save button is clicked
     chosenFoodId = null
     chosenAttractionId = null
+    chosenCampgroundId = null
 
     const parks = useParksByState()
     chosenParkCode = event.detail.parkCode
@@ -106,11 +106,11 @@ eventHub.addEventListener('saveFoodButtonClicked', event => {
     checkSaveTripButtonRenderCondition()
 })
 
-//when the "save food button" is clicked, get the chosen food ID and insert it into the myTripFood section on the DOM
+//when the "save campground button" is clicked, get the chosen campground ID and insert it into the myTripCampground section on the DOM
 eventHub.addEventListener('saveCampgroundButtonClicked', event => {
     const campgrounds = useCampgroundsByPark()
     chosenCampgroundId = event.detail.campgroundId
-    const chosenCampgroundObject = campgrounds.find(campground => campground.id === chosenCampgroundId)
+    const chosenCampgroundObject = campgrounds.find(campground => parseInt(campground.id) === parseInt(chosenCampgroundId))
 
     const campgroundTarget = document.querySelector('#myTripCampground')
     campgroundTarget.innerHTML = chosenCampgroundObject.name

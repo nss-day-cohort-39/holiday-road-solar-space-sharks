@@ -1,27 +1,27 @@
 {
   "trips": [
     {
-      "timestamp": 1585847951255,
-      "parkCode": "grte",
-      "campgroundId": "94",
-      "foodId": 52,
-      "attractionId": 51,
+      "timestamp": 1585858955215,
+      "parkCode": "colm",
+      "campgroundId": 2350,
+      "foodId": 7,
+      "attractionId": 6,
       "id": 1
     },
     {
-      "timestamp": 1585850682005,
-      "parkCode": "grte",
-      "campgroundId": "95",
-      "foodId": 52,
-      "attractionId": 51,
+      "timestamp": 1585859645226,
+      "parkCode": "colm",
+      "campgroundId": 2350,
+      "foodId": 7,
+      "attractionId": 6,
       "id": 2
     },
     {
-      "timestamp": 1585853271062,
-      "parkCode": "grte",
-      "campgroundId": "94",
-      "foodId": 52,
-      "attractionId": 51,
+      "timestamp": 1585860441693,
+      "parkCode": "bicr",
+      "campgroundId": null,
+      "foodId": 2,
+      "attractionId": 1,
       "id": 3
     }
   ]

@@ -43,7 +43,6 @@ eventHub.addEventListener("campgroundDropDownChanged", event => {
     let campgroundSelectDropdownValue = document.getElementById("campgroundSelectDropdown").value
 
     const foundCampground = campgrounds.find(campground => campground.id === campgroundSelectDropdownValue)
-    console.log(foundCampground)
     //show the details of the campgrounde
     contentTarget.innerHTML = CampgroundPreview(foundCampground)
 })
