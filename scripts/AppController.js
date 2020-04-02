@@ -28,7 +28,7 @@ eventHub.addEventListener("newTripBtnWasClicked", event => {
 })
 
 eventHub.addEventListener("saveParkButtonClicked", event => {
-    const hasCampgrounds = event.detail.hasCampgrounds
+    const hasCampgrounds = event.detail.hasCampground
     if (hasCampgrounds === true) {
         pageState = "campgroundSelect"
     } else {

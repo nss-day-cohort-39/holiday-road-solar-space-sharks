@@ -22,7 +22,6 @@ export const RenderMyTripViewContainers = () => {
     <section class="previewChoice"><span class="previewChoice__label">Restaurant</span> <span id="myTripFood"></span></section>
     <section class="previewChoice"><span class="previewChoice__label">Attraction</span> <span id="myTripAttraction"></span></section>
     <div class="saveTripButtonContainer">
-       
     </div>
     `
 }

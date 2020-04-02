@@ -3,7 +3,7 @@ import { SavedTrip } from './SavedTrip.js'
 import { getFoods } from '../foods/foodProvider.js'
 import { getParksByParkCode } from '../parks/parkProvider.js'
 import { getAttractions } from '../attractions/attractionProvider.js'
-import { useCampgroundsByPark, getCampgroundsByPark } from '../campgrounds/campgroundProvider.js'
+import { getCampgroundsByPark } from '../campgrounds/campgroundProvider.js'
 
 const eventHub = document.querySelector('.container')
 
@@ -22,15 +22,15 @@ const render = () => {
         }).join(",")
 
         // query all parks on park website and return array of park objects that match codes passed in "stringOfCodes"
-        getParksByParkCode(stringOfParkCodes)
+        getCampgroundsByPark(stringOfParkCodes)
             .then(getFoods)
             .then(getAttractions)
-            .then(getCampgroundsByPark(stringOfParkCodes))
+            .then(getParksByParkCode(stringOfParkCodes))
             .then(() => {
                 contentTarget.innerHTML = `
-      <h2>My Saved Trips</h2>
-      ${trips.map(trip => SavedTrip(trip)).join('')}
-      `
+                    <h2>My Saved Trips</h2>
+                    ${trips.map(trip => SavedTrip(trip)).join('')}
+                    `
             })
     })
 }

@@ -1,7 +1,7 @@
 import { useParksByParkCode } from '../parks/parkProvider.js'
 import { useFoods } from '../foods/foodProvider.js'
 import { useAttractions } from '../attractions/attractionProvider.js'
-import { useCampgroundsByPark } from '../campgrounds/campgroundProvider.js'
+import { useCampgroundsByPark, getCampgroundsByPark } from '../campgrounds/campgroundProvider.js'
 
 /* 
 Create a function that returns an html representation of a saved trip
@@ -18,20 +18,25 @@ export const SavedTrip = tripObject => {
         const chosenAttraction = attractions.find(
             attraction => attraction.id === tripObject.attractionId)
 
-        let chosenCampground = null
+        const campgrounds = useCampgroundsByPark()
 
         if (tripObject.campgroundId !== null) {
-            const campgrounds = useCampgroundsByPark()
-            chosenCampground = campgrounds.find(campground => parseInt(campground.id) === tripObject.campgroundId)
-        }
-
-        return `
-                <section id="savedTrip--${tripObject.id}" class="savedTrip">
-                  <h3>${chosenPark.name}</h3>
-                  ${chosenCampground !== null ? `<h3>${chosenCampground.name}</h3>` : ``}
-                  <h3>${chosenFood.businessName}</h3>
-                  <h3>${chosenAttraction.name}</h3>
-                </section>
-          `
-
+                const chosenCampground = campgrounds.find(campground => parseInt(campground.id) === tripObject.campgroundId)
+                return `
+                      <section id="savedTrip--${tripObject.id}" class="savedTrip">
+                        <h3>${chosenPark.name}</h3>
+                        <h3>${chosenCampground.name}</h3>
+                        <h3>${chosenFood.businessName}</h3>
+                        <h3>${chosenAttraction.name}</h3>
+                      </section>
+                `
+          } else {
+                return `
+                      <section id="savedTrip--${tripObject.id}" class="savedTrip">
+                        <h3>${chosenPark.name}</h3>
+                        <h3>${chosenFood.businessName}</h3>
+                        <h3>${chosenAttraction.name}</h3>
+                      </section>
+                `
+          }
 }

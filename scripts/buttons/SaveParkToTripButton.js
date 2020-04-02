@@ -13,8 +13,8 @@ eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveParkButton") {
         let parkSelectDropdownValue = document.getElementById("parkSelectDropdown").value
 
-        let hasCampgrounds = false
-
+        let hasCampgrounds = ""
+        console.log(hasCampgrounds)
         getCampgroundsByPark(parkSelectDropdownValue).then(() => {
             const campgrounds = useCampgroundsByPark()
             if (campgrounds.length === 0) {
@@ -22,16 +22,17 @@ eventHub.addEventListener("click", clickEvent => {
             } else {
                 hasCampgrounds = true
             }
+            const saveParkClickEvent = new CustomEvent("saveParkButtonClicked", {
+                detail: {
+                    parkCode: parkSelectDropdownValue,
+                    hasCampground: hasCampgrounds
+                }
+            })
+    
+            eventHub.dispatchEvent(saveParkClickEvent)
         })
 
-        const saveParkClickEvent = new CustomEvent("saveParkButtonClicked", {
-            detail: {
-                parkCode: parkSelectDropdownValue,
-                campground: hasCampgrounds
-            }
-        })
-
-        eventHub.dispatchEvent(saveParkClickEvent)
+        
 
     }
 })
