@@ -28,9 +28,15 @@ eventHub.addEventListener("newTripBtnWasClicked", event => {
 })
 
 eventHub.addEventListener("saveParkButtonClicked", event => {
+    pageState = "campgroundSelect"
+    pageStateChanged()
+})
+
+eventHub.addEventListener("saveCampgroundButtonClicked", event => {
     pageState = "eaterySelect"
     pageStateChanged()
 })
+
 
 eventHub.addEventListener("saveFoodButtonClicked", event => {
     pageState = "attractionSelect"
@@ -61,6 +67,7 @@ const hideAllComponents = () => {
     const componentArray = [
         '.welcomeContainer',
         '.dropdownContainer--parks',
+        '.dropdownContainer--campgrounds',
         '.dropdownContainer--food',
         '.dropdownContainer--attraction',
         '.previewContainer',
@@ -78,6 +85,8 @@ export const pageStateChanged = () => {
         document.querySelector(".welcomeContainer").classList.remove("hidden")
     } else if (pageState === "parkSelect") {
         document.querySelector(".dropdownContainer--parks").classList.remove("hidden")
+    } else if (pageState === "campgroundSelect") {
+        document.querySelector(".dropdownContainer--campgrounds").classList.remove("hidden")
     } else if (pageState === "eaterySelect") {
         document.querySelector(".dropdownContainer--food").classList.remove("hidden")
     } else if (pageState === "attractionSelect") {

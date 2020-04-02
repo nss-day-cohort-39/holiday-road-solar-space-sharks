@@ -2,6 +2,7 @@ import { useParksByState } from '../parks/parkProvider.js'
 import { useAttractions } from '../attractions/attractionProvider.js'
 import { useFoods } from '../foods/foodProvider.js'
 import { saveNewTrip } from './savedTripsProvider.js'
+import { useCampgroundsByPark } from '../campgrounds/campgroundProvider.js'
 
 const eventHub = document.querySelector('.container')
 const contentTarget = document.querySelector('.previewContainer')
@@ -10,12 +11,14 @@ const contentTarget = document.querySelector('.previewContainer')
 let chosenParkCode = ''
 let chosenFoodId = null
 let chosenAttractionId = null
+let chosenCampgroundId = ''
 
 //initial render of the three sections inside of previewContainer on the DOM
 export const RenderMyTripViewContainers = () => {
     contentTarget.innerHTML = `
     <h2>My Current Trip</h2>
     <section class="previewChoice"><span class="previewChoice__label">Park</span> <span id="myTripPark"></span></section>
+    <section class="previewChoice"><span class="previewChoice__label">CampGround</span> <span id="myTripCampground"></span></section>
     <section class="previewChoice"><span class="previewChoice__label">Restaurant</span> <span id="myTripFood"></span></section>
     <section class="previewChoice"><span class="previewChoice__label">Attraction</span> <span id="myTripAttraction"></span></section>
     <div class="saveTripButtonContainer">
@@ -33,7 +36,8 @@ const checkSaveTripButtonRenderCondition = () => {
     if (
         chosenParkCode !== '' &&
         chosenFoodId !== null &&
-        chosenAttractionId !== null
+        chosenAttractionId !== null &&
+        chosenCampgroundId != ''
     ) {
         buttonContainerElement.innerHTML = `<button id="saveCompleteTrip">Save to My Trips</button>`
     } else {
@@ -53,6 +57,7 @@ eventHub.addEventListener('click', event => {
         const newTripObj = {
             timestamp: Date.now(),
             parkCode: chosenParkCode,
+            campgroundId: chosenCampgroundId,
             foodId: parseInt(chosenFoodId),
             attractionId: parseInt(chosenAttractionId)
         }
@@ -98,5 +103,16 @@ eventHub.addEventListener('saveFoodButtonClicked', event => {
 
     const foodTarget = document.querySelector('#myTripFood')
     foodTarget.innerHTML = chosenFoodObject.businessName
+    checkSaveTripButtonRenderCondition()
+})
+
+//when the "save food button" is clicked, get the chosen food ID and insert it into the myTripFood section on the DOM
+eventHub.addEventListener('saveCampgroundButtonClicked', event => {
+    const campgrounds = useCampgroundsByPark()
+    chosenCampgroundId = event.detail.campgroundId
+    const chosenCampgroundObject = campgrounds.find(campground => campground.id === chosenCampgroundId)
+
+    const campgroundTarget = document.querySelector('#myTripCampground')
+    campgroundTarget.innerHTML = chosenCampgroundObject.name
     checkSaveTripButtonRenderCondition()
 })

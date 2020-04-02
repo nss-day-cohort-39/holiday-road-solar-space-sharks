@@ -3,6 +3,7 @@ import { SavedTrip } from './SavedTrip.js'
 import { getFoods } from '../foods/foodProvider.js'
 import { getParksByParkCode } from '../parks/parkProvider.js'
 import { getAttractions } from '../attractions/attractionProvider.js'
+import { useCampgroundsByPark } from '../campgrounds/campgroundProvider.js'
 
 const eventHub = document.querySelector('.container')
 
@@ -14,7 +15,6 @@ eventHub.addEventListener("mySavedTripsBtnWasClicked", event => render())
 // create a render function that renders the saved trips
 const render = () => {
     getTrips().then(() => {
-
         const trips = useTrips()
             // iterate all trips in database.json and return a string of all Park Codes separated by a comma
         const stringOfParkCodes = trips.map(trip => {
