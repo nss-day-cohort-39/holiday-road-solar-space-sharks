@@ -1,120 +1,12 @@
 {
   "trips": [
     {
-      "timestamp": 1585766354317,
-      "parkCode": "bicr",
-      "foodId": 2,
-      "attractionId": 1,
+      "timestamp": 1585847951255,
+      "parkCode": "grte",
+      "campgroundId": "94",
+      "foodId": 52,
+      "attractionId": 51,
       "id": 1
-    },
-    {
-      "timestamp": 1585771335729,
-      "parkCode": "bicr",
-      "foodId": 2,
-      "attractionId": 1,
-      "id": 2
-    },
-    {
-      "timestamp": 1585772347223,
-      "parkCode": "bicr",
-      "foodId": 2,
-      "attractionId": 1,
-      "id": 3
-    },
-    {
-      "timestamp": 1585772707601,
-      "parkCode": "bicr",
-      "foodId": 2,
-      "attractionId": 1,
-      "id": 4
-    },
-    {
-      "timestamp": 1585772841557,
-      "parkCode": "bicr",
-      "foodId": 2,
-      "attractionId": 1,
-      "id": 5
-    },
-    {
-      "timestamp": 1585773321356,
-      "parkCode": "bicr",
-      "foodId": 2,
-      "attractionId": 1,
-      "id": 6
-    },
-    {
-      "timestamp": 1585775218299,
-      "parkCode": "cagr",
-      "foodId": 4,
-      "attractionId": 3,
-      "id": 7
-    },
-    {
-      "timestamp": 1585775356361,
-      "parkCode": "poex",
-      "foodId": 46,
-      "attractionId": 45,
-      "id": 8
-    },
-    {
-      "timestamp": 1585835350563,
-      "parkCode": "hutr",
-      "foodId": 4,
-      "attractionId": 3,
-      "id": 9
-    },
-    {
-      "timestamp": 1585840504412,
-      "parkCode": "anch",
-      "foodId": 3,
-      "attractionId": 2,
-      "id": 10
-    },
-    {
-      "timestamp": 1585840550513,
-      "parkCode": "olsp",
-      "foodId": 30,
-      "attractionId": 32,
-      "id": 11
-    },
-    {
-      "timestamp": 1585840676241,
-      "parkCode": "dino",
-      "foodId": 46,
-      "attractionId": 6,
-      "id": 12
-    },
-    {
-      "timestamp": 1585846634724,
-      "parkCode": "grte",
-      "campgroundId": "94",
-      "foodId": 52,
-      "attractionId": 51,
-      "id": 13
-    },
-    {
-      "timestamp": 1585846763939,
-      "parkCode": "grte",
-      "campgroundId": "94",
-      "foodId": 52,
-      "attractionId": 51,
-      "id": 14
-    },
-    {
-      "timestamp": 1585847520559,
-      "parkCode": "grte",
-      "campgroundId": "95",
-      "foodId": 52,
-      "attractionId": 51,
-      "id": 15
-    },
-    {
-      "timestamp": 1585847575252,
-      "parkCode": "grte",
-      "campgroundId": "94",
-      "foodId": 52,
-      "attractionId": 51,
-      "id": 16
     }
   ]
 }

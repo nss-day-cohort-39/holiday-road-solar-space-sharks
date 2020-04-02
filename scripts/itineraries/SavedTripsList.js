@@ -3,7 +3,7 @@ import { SavedTrip } from './SavedTrip.js'
 import { getFoods } from '../foods/foodProvider.js'
 import { getParksByParkCode } from '../parks/parkProvider.js'
 import { getAttractions } from '../attractions/attractionProvider.js'
-import { useCampgroundsByPark } from '../campgrounds/campgroundProvider.js'
+import { useCampgroundsByPark, getCampgroundsByPark } from '../campgrounds/campgroundProvider.js'
 
 const eventHub = document.querySelector('.container')
 
@@ -25,6 +25,7 @@ const render = () => {
         getParksByParkCode(stringOfParkCodes)
             .then(getFoods)
             .then(getAttractions)
+            .then(getCampgroundsByPark(stringOfParkCodes))
             .then(() => {
                 contentTarget.innerHTML = `
       <h2>My Saved Trips</h2>
