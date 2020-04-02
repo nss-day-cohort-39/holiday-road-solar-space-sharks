@@ -1,0 +1,96 @@
+#navBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    height: 40px;
+    background-color: #8b877e;
+    color: #7d3521;
+    padding: 0;
+    vertical-align: middle;
+}
+
+#roadLines {
+    border: 0;
+    border-top: 3px dashed #FFCA28;
+    margin-top: 18px;
+}
+
+#navBar__road {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#navBar__road__button--home {
+    cursor: pointer;
+}
+
+.navBar__road__icon {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    background-color: #FFCA28;
+    margin: .5em;
+}
+
+.icon--star {
+    background-image: url('../images/star_icon.png');
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    border-radius: unset;
+}
+
+.icon--home {
+    background-image: url('../images/home_icon.png');
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    border-radius: unset;
+}
+
+.icon--current {
+    background-image: url('../images/camper_icon.png');
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 40px;
+    background-color: transparent;
+    border-radius: unset;
+}
+
+.icon--current:hover {
+    animation: slightWiggle;
+    animation-duration: 300ms;
+    animation-iteration-count: 1;
+}
+
+@keyframes slightWiggle {
+    0% {
+        transform: rotate(4deg);
+    }
+    25% {
+        transform: rotate(-4deg);
+    }
+    50% {
+        transform: rotate(8deg);
+    }
+    75% {
+        transform: rotate(-4deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}

@@ -1,3 +1,4 @@
+@import url('./navigation.css');
 @import url('./myTripPreview.css');
 @import url('./savedTrips.css');
 @import url('./weather.css');
@@ -7,9 +8,18 @@
 
 /* Top Level Styling */
 
+html,
+body {
+    height: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
 body {
     background-color: #c6e7db;
     color: #2b402b;
+    margin: 0;
+    padding: 0;
 }
 
 select {
@@ -52,6 +62,15 @@ button:active {
     font-family: 'Raleway', sans-serif;
     text-align: center;
     font-size: 1.15em;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    margin-top: 40px;
+    overflow-y: auto;
+    height: calc(100% - 80px);
 }
 
 .previewProperties {

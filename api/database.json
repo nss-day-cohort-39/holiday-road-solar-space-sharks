@@ -83,6 +83,20 @@
       "foodId": 46,
       "attractionId": 6,
       "id": 12
+    },
+    {
+      "timestamp": 1585846573817,
+      "parkCode": "bicr",
+      "foodId": 2,
+      "attractionId": 1,
+      "id": 13
+    },
+    {
+      "timestamp": 1585850981009,
+      "parkCode": "efmo",
+      "foodId": 17,
+      "attractionId": 16,
+      "id": 14
     }
   ]
 }

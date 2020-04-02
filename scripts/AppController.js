@@ -1,3 +1,5 @@
+import { UpdateNavBar } from "./navigation/TopNavBar.js"
+
 /*
     Manages the app state for all other components
 */
@@ -57,6 +59,11 @@ eventHub.addEventListener("mySavedTripsBtnWasClicked", event => {
     pageStateChanged()
 })
 
+eventHub.addEventListener("homeButtonClicked", event => {
+    pageState = "home"
+    pageStateChanged()
+})
+
 const hideAllComponents = () => {
     const componentArray = [
         '.welcomeContainer',
@@ -90,4 +97,6 @@ export const pageStateChanged = () => {
         //if page state isn't set default to home
         document.querySelector(".welcomeContainer").classList.remove("hidden")
     }
+
+    UpdateNavBar(pageState)
 }
