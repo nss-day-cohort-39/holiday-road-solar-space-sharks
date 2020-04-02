@@ -3,24 +3,20 @@
 */
 
 export const CampgroundPreview = (campObject) => {
+    const campgroundHoursEntrieArray = Object.entries(campObject.operatingHours[0].standardHours)
+    console.log(campgroundHoursEntrieArray)
     return `
         <h2>${campObject.name}</h2>
-        ${campObject.addresses.forEach(address => {
-            if (address.type === "Physical" ) {
+        <div>Address: ${campObject.addresses[0].line1} ${campObject.addresses[0].city}, ${campObject.addresses[0].stateCode} ${campObject.addresses[0].postalCode}</div>
+        <div class="campgroundHours>
+            ${campgroundHoursEntrieArray.map(day => {
                 return `
-                <div>Address: ${address.line1} ${address.city}, ${address.stateCode} ${address.postalCode}</div>
+                <div class="campgroundDayHours">
+                    <div>${day[0]}</div>
+                    <div>${day[1]}</div>
+                </div>
                 `
-            } else {
-                return `
-                <div>Address: Please <a href${campObject.directionsUrl}>click here</a> for directions </div>
-                `
-            }
-        })}
-       
-            
-
+            }).join("")}
+        </div>
     `
 }
-
-{/* <div>${Object.keys(campObject.operatingHours.standardHours)}</div>
-<div>${Object.values(campObject.operatingHours.standardHours)}</div> */}

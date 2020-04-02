@@ -27,30 +27,8 @@ eventHub.addEventListener("parkDropDownChanged", event => {
     const parkCode = event.detail.parkCode
 
     getCampgroundsByPark(parkCode).then(() => {
-        //list of all the parks by state
+        //list of all the campgrounds for the chosen park
         const campgrounds = useCampgroundsByPark()
-        // let filteredCampgrounds = []
-        // for (const  of chosenParkStatesArray) {
-        //     const foundFood = foods.filter(food => food.state === state)
-        //     Array.prototype.push.apply(filteredFoods, foundFood)
-        // }
-        // // //park code the user chose from the drop-down
-        // // const chosenParkCode = event.detail.parkCode
-        // //     //return a park object = the park code we chose in the park dropdown
-        // // const chosenParkObject = parks.find(park => park.parkCode === chosenParkCode)
-
-        // // pull states property from chosen park object in the form of a string
-        // const chosenParkStates = chosenParkObject.states
-        //     // creating a workable array of states from the string of states
-        // const chosenParkStatesArray = chosenParkStates.split(",")
-
-        // // iterate over array of states (within a park) and add each restaurant within those states to filtered foods array 
-        // let filteredFoods = []
-        // for (const state of chosenParkStatesArray) {
-        //     const foundFood = foods.filter(food => food.state === state)
-        //     Array.prototype.push.apply(filteredFoods, foundFood)
-        // }
-
         render(campgrounds)
 
     })
@@ -61,11 +39,11 @@ eventHub.addEventListener("campgroundDropDownChanged", event => {
 
     const campgrounds = useCampgroundsByPark()
 
-    //get the value of the food ID that the user chose
+    //get the value of the campground ID that the user chose
     let campgroundSelectDropdownValue = document.getElementById("campgroundSelectDropdown").value
 
     const foundCampground = campgrounds.find(campground => campground.id === campgroundSelectDropdownValue)
     console.log(foundCampground)
-    //show the details of the food place
+    //show the details of the campgrounde
     contentTarget.innerHTML = CampgroundPreview(foundCampground)
 })

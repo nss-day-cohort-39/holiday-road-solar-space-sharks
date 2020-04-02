@@ -15,6 +15,7 @@ export const SavedTrip = tripObject => {
 
     const foods = useFoods()
     const chosenFood = foods.find(food => food.id === tripObject.foodId)
+    
     const attractions = useAttractions()
     const chosenAttraction = attractions.find(
         attraction => attraction.id === tripObject.attractionId
