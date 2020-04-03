@@ -71,6 +71,22 @@
       "foodId": 46,
       "attractionId": 45,
       "id": 9
+    },
+    {
+      "timestamp": 1585923556366,
+      "parkCode": "grsa",
+      "campgroundId": 1145,
+      "foodId": 7,
+      "attractionId": 6,
+      "id": 10
+    },
+    {
+      "timestamp": 1585923792077,
+      "parkCode": "foth",
+      "campgroundId": null,
+      "foodId": 10,
+      "attractionId": 8,
+      "id": 11
     }
   ]
 }
