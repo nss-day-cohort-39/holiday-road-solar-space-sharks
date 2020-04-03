@@ -1,0 +1,36 @@
+
+.campgroundHourColumns {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    border: .2em;
+}
+
+.campgroundHours {
+    display: flex;
+    flex-flow: column nowrap;
+    border: solid black;
+    margin: .2em;
+}
+
+.campgroundDay {
+    margin: .2em;
+}
+
+.hoursHeader {
+    margin-top: 2em;
+}
+
+.header {
+    font-weight: bold;
+}
+
+.red {
+    color: red;
+    font-size: 2em;
+}
+
+.green {
+    color: green;
+    font-size: 2em;
+}

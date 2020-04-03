@@ -47,6 +47,14 @@
       "foodId": 46,
       "attractionId": 6,
       "id": 6
+    },
+    {
+      "timestamp": 1585879958972,
+      "parkCode": "cari",
+      "campgroundId": null,
+      "foodId": 20,
+      "attractionId": 19,
+      "id": 7
     }
   ]
 }
