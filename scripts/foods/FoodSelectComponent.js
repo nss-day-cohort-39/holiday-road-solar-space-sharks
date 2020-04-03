@@ -19,7 +19,7 @@ const render = (filteredFoods) => {
     contentTarget.innerHTML = FoodSelectDropdown(filteredFoods)
 
     contentTarget.innerHTML += `
-    <section id="foodPreview" class="previewProperties"></section>
+    <section id="foodPreview"></section>
     `
     contentTarget.innerHTML += SaveFoodButton()
 

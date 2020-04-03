@@ -7,6 +7,9 @@
     position: sticky;
 }
 
+
+/* logo container is the blue background with the remote-ly logo */
+
 #logoContainer {
     font-family: 'Copse', serif;
     color: white;
@@ -15,6 +18,9 @@
     height: 60px;
     background: #b6d5ff url("../images/forest.png") no-repeat fixed center;
 }
+
+
+/* strip of green grass behind the road */
 
 #navBar__grass {
     background-color: #32645a;
@@ -41,6 +47,9 @@
     background-repeat: repeat-x;
 }
 
+
+/* defaults for the icons that are on the road */
+
 .navBar__road__icon {
     position: absolute;
     width: 10px;
@@ -51,6 +60,9 @@
     z-index: 10;
     top: 83px;
 }
+
+
+/* my trips/preview icon on the nav bar */
 
 .icon--star {
     background-image: url('../images/mountain_icon.png');

@@ -12,27 +12,30 @@ export const SaveParkButton = () => {
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveParkButton") {
         let parkSelectDropdownValue = document.getElementById("parkSelectDropdown").value
-        // if statement passing whether park chosen does or does not have a campground to app controller
-        document.querySelector(".dropdownContainer--parks").innerHTML = ''
-        let hasCampgrounds = ""
-        getCampgroundsByPark(parkSelectDropdownValue).then(() => {
-            const campgrounds = useCampgroundsByPark()
-            if (campgrounds.length === 0) {
-                hasCampgrounds = false
-            } else {
-                hasCampgrounds = true
-            }
-            const saveParkClickEvent = new CustomEvent("saveParkButtonClicked", {
-                detail: {
-                    parkCode: parkSelectDropdownValue,
-                    hasCampground: hasCampgrounds
+        if (parkSelectDropdownValue === "0") {
+            alert(`Please select a park!`)
+        } else {
+            // if statement passing whether park chosen does or does not have a campground to app controller
+            document.querySelector(".dropdownContainer--parks").innerHTML = ''
+            let hasCampgrounds = ""
+            getCampgroundsByPark(parkSelectDropdownValue).then(() => {
+                const campgrounds = useCampgroundsByPark()
+                if (campgrounds.length === 0) {
+                    hasCampgrounds = false
+                } else {
+                    hasCampgrounds = true
                 }
-            })
-    
-            eventHub.dispatchEvent(saveParkClickEvent)
-        })
+                const saveParkClickEvent = new CustomEvent("saveParkButtonClicked", {
+                    detail: {
+                        parkCode: parkSelectDropdownValue,
+                        hasCampground: hasCampgrounds
+                    }
+                })
 
-        
+                eventHub.dispatchEvent(saveParkClickEvent)
+            })
+        }
+
 
     }
 })

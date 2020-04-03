@@ -17,13 +17,19 @@ export const TopNavBar = () => {
 export const UpdateNavBar = (pageState) => {
     //reset the styling on the Nav Bar
     TopNavBar()
-        //remove the "current" style so that we can add it below
-    document.querySelector('#navBar__road__button--van').classList.remove("position--home")
-    document.querySelector('#navBar__road__button--van').classList.remove("position--park")
-    document.querySelector('#navBar__road__button--van').classList.remove("position--campground")
-    document.querySelector('#navBar__road__button--van').classList.remove("position--food")
-    document.querySelector('#navBar__road__button--van').classList.remove("position--attraction")
-    document.querySelector('#navBar__road__button--van').classList.remove("position--myTrip")
+
+    //remove previous position classes so that we can set a new one
+    const positionClasses = [
+        'position--home',
+        'position--park',
+        'position--campground',
+        'position--food',
+        'position--attraction',
+        'position--myTrip'
+    ]
+    positionClasses.forEach(positionClass => {
+        document.querySelector('#navBar__road__button--van').classList.remove(positionClass)
+    })
 
     if (pageState === "home") {
         document.querySelector('#navBar__road__button--van').classList.add("position--home")
@@ -41,23 +47,6 @@ export const UpdateNavBar = (pageState) => {
         //default back to home state
         document.querySelector('#navBar__road__button--van').classList.add("position--home")
     }
-
-    // if (pageState === "home") {
-    //     document.querySelector('#navBar__road__button--van').style.left = "0%"
-    // } else if (pageState === "parkSelect") {
-    //     document.querySelector('#navBar__road__button--van').style.left = "19%"
-    // } else if (pageState === "campgroundSelect") {
-    //     document.querySelector('#navBar__road__button--van').style.left = "32%"
-    // } else if (pageState === "eaterySelect") {
-    //     document.querySelector('#navBar__road__button--van').style.left = "55%"
-    // } else if (pageState === "attractionSelect") {
-    //     document.querySelector('#navBar__road__button--van').style.left = "73%"
-    // } else if (pageState === "myTrip") {
-    //     document.querySelector('#navBar__road__button--van').style.left = "100%"
-    // } else {
-    //     //default back to home state
-    //     document.querySelector('#navBar__road__button--van').style.left = "0%"
-    // }
 
 }
 

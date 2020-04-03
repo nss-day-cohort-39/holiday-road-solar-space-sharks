@@ -15,7 +15,7 @@ const render = (filteredCampgrounds) => {
     contentTarget.innerHTML = CampgroundSelectDropdown(filteredCampgrounds)
 
     contentTarget.innerHTML += `
-    <section id="campgroundPreview" class="previewProperties"></section>
+    <section id="campgroundPreview"></section>
     `
     contentTarget.innerHTML += SaveCampgroundButton()
 
@@ -43,6 +43,6 @@ eventHub.addEventListener("campgroundDropDownChanged", event => {
     let campgroundSelectDropdownValue = document.getElementById("campgroundSelectDropdown").value
 
     const foundCampground = campgrounds.find(campground => campground.id === campgroundSelectDropdownValue)
-    //show the details of the campgrounde
+        //show the details of the campgrounde
     contentTarget.innerHTML = CampgroundPreview(foundCampground)
 })

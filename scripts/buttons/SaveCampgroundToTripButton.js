@@ -19,6 +19,5 @@ eventHub.addEventListener("click", clickEvent => {
         })
 
         eventHub.dispatchEvent(saveCampgroundClickEvent)
-
     }
 })

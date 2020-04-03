@@ -25,35 +25,52 @@ List of possible app states
 export let pageState = "home"
 
 eventHub.addEventListener("newTripBtnWasClicked", event => {
-    pageState = "parkSelect"
-    pageStateChanged()
+    const state = event.detail.stateCode
+    if (state !== "0") {
+        pageState = "parkSelect"
+        pageStateChanged()
+    }
 })
 
 eventHub.addEventListener("saveParkButtonClicked", event => {
-    const hasCampgrounds = event.detail.hasCampground
-    if (hasCampgrounds === true) {
-        pageState = "campgroundSelect"
-    } else {
-        pageState = "eaterySelect"
+    if (event.detail.parkCode !== "0") {
+        const hasCampgrounds = event.detail.hasCampground
+        if (hasCampgrounds === true) {
+            pageState = "campgroundSelect"
+        } else {
+            pageState = "eaterySelect"
+        }
+        pageStateChanged()
     }
-    pageStateChanged()
 
 })
 
 eventHub.addEventListener("saveCampgroundButtonClicked", event => {
-    pageState = "eaterySelect"
-    pageStateChanged()
+    if (event.detail.campgroundId !== "0") {
+        pageState = "eaterySelect"
+        pageStateChanged()
+    } else {
+        alert("Please select a campground!")
+    }
 })
 
 
 eventHub.addEventListener("saveFoodButtonClicked", event => {
-    pageState = "attractionSelect"
-    pageStateChanged()
+    if (event.detail.foodId !== "0") {
+        pageState = "attractionSelect"
+        pageStateChanged()
+    } else {
+        alert("Please select a restaurant!")
+    }
 })
 
 eventHub.addEventListener("saveAttractionButtonClicked", event => {
-    pageState = "myTrip"
-    pageStateChanged()
+    if (event.detail.attractionId !== "0") {
+        pageState = "myTrip"
+        pageStateChanged()
+    } else {
+        alert("Please select an attraction!")
+    }
 })
 
 eventHub.addEventListener("myTripButtonClicked", event => {
