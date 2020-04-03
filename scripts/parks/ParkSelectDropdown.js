@@ -5,7 +5,7 @@ const eventHub = document.querySelector('.container')
 export const ParkSelectDropdown = (allTheParks) => {
         return `
         <select id="parkSelectDropdown">
-            <option value="0">Please Choose a Park</option>
+            <option class="campgroundOption" value="0">Please Choose a Park</option>
             ${
                 allTheParks.map(onePark => {
                     return `<option id="option--${onePark.parkCode}" value="${onePark.parkCode}">${onePark.name} - ${onePark.states}</option>`

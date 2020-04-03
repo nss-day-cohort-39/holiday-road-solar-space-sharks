@@ -8,6 +8,7 @@ import './attractions/AttractionSelectComponent.js'
 import './itineraries/SavedTripsList.js'
 import './weather/weatherProvider.js'
 import './weather/WeatherComponent.js'
+import './campgrounds/CampgroundSelectComponent.js'
 
 pageStateChanged()
 
