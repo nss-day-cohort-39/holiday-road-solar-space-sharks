@@ -1,3 +1,4 @@
+const navigationHub = document.querySelector("#navBar")
 const eventHub = document.querySelector(".container")
 const contentTarget = document.querySelector("#navBar__road")
 
@@ -17,29 +18,50 @@ export const UpdateNavBar = (pageState) => {
     //reset the styling on the Nav Bar
     TopNavBar()
         //remove the "current" style so that we can add it below
-    document.querySelector('.navBar__road__icon').classList.remove("icon--current")
+    document.querySelector('#navBar__road__button--van').classList.remove("position--home")
+    document.querySelector('#navBar__road__button--van').classList.remove("position--park")
+    document.querySelector('#navBar__road__button--van').classList.remove("position--campground")
+    document.querySelector('#navBar__road__button--van').classList.remove("position--food")
+    document.querySelector('#navBar__road__button--van').classList.remove("position--attraction")
+    document.querySelector('#navBar__road__button--van').classList.remove("position--myTrip")
 
     if (pageState === "home") {
-        document.querySelector('#navBar__road__button--home').classList.remove("icon--home")
-        document.querySelector('#navBar__road__button--home').classList.add("icon--current")
+        document.querySelector('#navBar__road__button--van').classList.add("position--home")
     } else if (pageState === "parkSelect") {
-        document.querySelector('#navBar__road__button--park').classList.add("icon--current")
+        document.querySelector('#navBar__road__button--van').classList.add("position--park")
+    } else if (pageState === "campgroundSelect") {
+        document.querySelector('#navBar__road__button--van').classList.add("position--campground")
     } else if (pageState === "eaterySelect") {
-        document.querySelector('#navBar__road__button--food').classList.add("icon--current")
+        document.querySelector('#navBar__road__button--van').classList.add("position--food")
     } else if (pageState === "attractionSelect") {
-        document.querySelector('#navBar__road__button--attraction').classList.add("icon--current")
+        document.querySelector('#navBar__road__button--van').classList.add("position--attraction")
     } else if (pageState === "myTrip") {
-        document.querySelector('#navBar__road__button--myTrip').classList.remove("icon--star")
-        document.querySelector('#navBar__road__button--myTrip').classList.add("icon--current")
+        document.querySelector('#navBar__road__button--van').classList.add("position--myTrip")
     } else {
         //default back to home state
-        document.querySelector('#navBar__road__button--home').classList.remove("icon--home")
-        document.querySelector('#navBar__road__button--home').classList.add("icon--current")
+        document.querySelector('#navBar__road__button--van').classList.add("position--home")
     }
+
+    // if (pageState === "home") {
+    //     document.querySelector('#navBar__road__button--van').style.left = "0%"
+    // } else if (pageState === "parkSelect") {
+    //     document.querySelector('#navBar__road__button--van').style.left = "19%"
+    // } else if (pageState === "campgroundSelect") {
+    //     document.querySelector('#navBar__road__button--van').style.left = "32%"
+    // } else if (pageState === "eaterySelect") {
+    //     document.querySelector('#navBar__road__button--van').style.left = "55%"
+    // } else if (pageState === "attractionSelect") {
+    //     document.querySelector('#navBar__road__button--van').style.left = "73%"
+    // } else if (pageState === "myTrip") {
+    //     document.querySelector('#navBar__road__button--van').style.left = "100%"
+    // } else {
+    //     //default back to home state
+    //     document.querySelector('#navBar__road__button--van').style.left = "0%"
+    // }
 
 }
 
-eventHub.addEventListener("click", clickEvent => {
+navigationHub.addEventListener("click", clickEvent => {
     console.log(`clicky ${clickEvent.target.id}`)
     if (clickEvent.target.id === "navBar__road__button--home") {
         console.log('clicked!')

@@ -61,6 +61,7 @@ eventHub.addEventListener("mySavedTripsBtnWasClicked", event => {
 
 eventHub.addEventListener("homeButtonClicked", event => {
     pageState = "home"
+    document.querySelector('#loading').classList.add("hidden")
     pageStateChanged()
 })
 

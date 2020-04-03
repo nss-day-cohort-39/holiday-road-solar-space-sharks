@@ -1,67 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Copse&display=swap');
 #navBar {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     box-sizing: border-box;
-    height: 40px;
-    background-color: #8b877e;
-    color: #7d3521;
     padding: 0;
     vertical-align: middle;
+    position: sticky;
 }
 
-#roadLines {
-    border: 0;
-    border-top: 3px dashed #FFCA28;
-    margin-top: 18px;
+#logoContainer {
+    font-family: 'Copse', serif;
+    color: white;
+    font-size: 2.5em;
+    text-align: center;
+    height: 60px;
+    background: #b6d5ff url("../images/forest.png") no-repeat fixed center;
+}
+
+#navBar__grass {
+    background-color: #32645a;
+    padding: 5px 0 10px 0;
 }
 
 #navBar__road {
-    position: fixed;
-    top: 0;
     width: 100%;
-    height: 40px;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    height: 15px;
+    background-color: #8b877e;
 }
 
-#navBar__road__button--home {
-    cursor: pointer;
+#navBar__road div {
+    margin-top: -15px;
+}
+
+#roadLines {
+    position: relative;
+    top: 7px;
+    width: 100%;
+    height: 2px;
+    background-image: linear-gradient(to right, #ccc 0%, #ccc 50%, transparent 50%);
+    background-size: 20px 2px;
+    background-repeat: repeat-x;
 }
 
 .navBar__road__icon {
-    width: 15px;
-    height: 15px;
+    position: absolute;
+    width: 10px;
+    height: 10px;
     border-radius: 15px;
-    background-color: #FFCA28;
+    background-color: #ccc;
     margin: .5em;
+    z-index: 10;
+    top: 83px;
 }
 
 .icon--star {
-    background-image: url('../images/star_icon.png');
-    background-size: 30px 30px;
+    background-image: url('../images/mountain_icon.png');
+    background-size: 96px 96px;
     background-repeat: no-repeat;
-    height: 30px;
-    width: 30px;
+    height: 96px;
+    width: 96px;
     background-color: transparent;
     border-radius: unset;
+    top: -9px;
 }
 
 .icon--home {
     background-image: url('../images/home_icon.png');
-    background-size: 30px 30px;
+    background-size: 64px 64px;
     background-repeat: no-repeat;
-    height: 30px;
-    width: 30px;
+    height: 64px;
+    width: 64px;
     background-color: transparent;
     border-radius: unset;
+    top: 19px;
+    cursor: pointer;
 }
 
-.icon--current {
+.icon--home:hover {
+    animation: squishy;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+#navBar__road__button--van {
+    position: absolute;
     background-image: url('../images/camper_icon.png');
     background-size: 40px 40px;
     background-repeat: no-repeat;
@@ -69,12 +90,50 @@
     width: 40px;
     background-color: transparent;
     border-radius: unset;
+    left: 0%;
+    top: 38px;
+    z-index: 20;
+    transition-property: left;
+    transition-duration: 4s;
+    animation: vanRunning;
+    animation-duration: 500ms;
+    animation-iteration-count: infinite;
 }
 
-.icon--current:hover {
+#navBar__road__button--van:hover {
     animation: slightWiggle;
     animation-duration: 300ms;
     animation-iteration-count: 1;
+}
+
+#navBar__road__button--van.position--home,
+#navBar__road__button--home {
+    left: 0%;
+}
+
+#navBar__road__button--van.position--park,
+#navBar__road__button--park {
+    left: 16.66%;
+}
+
+#navBar__road__button--van.position--campground,
+#navBar__road__button--campground {
+    left: 33.33%;
+}
+
+#navBar__road__button--van.position--food,
+#navBar__road__button--food {
+    left: 50%;
+}
+
+#navBar__road__button--van.position--attraction,
+#navBar__road__button--attraction {
+    left: 66.66%;
+}
+
+#navBar__road__button--van.position--myTrip,
+#navBar__road__button--myTrip {
+    left: 83.33%;
 }
 
 @keyframes slightWiggle {
@@ -92,5 +151,35 @@
     }
     100% {
         transform: rotate(0deg);
+    }
+}
+
+@keyframes vanRunning {
+    0% {
+        transform: translateY(1px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    75% {
+        transform: translateY(1px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes squishy {
+    0% {
+        transform-origin: 50% 100%;
+        transform: scaleY(1);
+    }
+    50% {
+        transform-origin: 50% 100%;
+        transform: scaleY(1.05);
+    }
+    100% {
+        transform-origin: 50% 100%;
+        transform: scaleY(1);
     }
 }

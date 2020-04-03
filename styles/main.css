@@ -65,10 +65,11 @@ button:active {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
+    justify-content: start;
     align-items: center;
     padding: 1em;
-    margin-top: 40px;
+    /* margin-top: 40px; */
     overflow-y: auto;
     height: calc(100% - 80px);
 }
