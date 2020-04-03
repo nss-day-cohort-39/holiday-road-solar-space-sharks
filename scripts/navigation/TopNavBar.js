@@ -62,9 +62,7 @@ export const UpdateNavBar = (pageState) => {
 }
 
 navigationHub.addEventListener("click", clickEvent => {
-    console.log(`clicky ${clickEvent.target.id}`)
     if (clickEvent.target.id === "navBar__road__button--home") {
-        console.log('clicked!')
         const homeButtonClickEvent = new CustomEvent('homeButtonClicked')
         eventHub.dispatchEvent(homeButtonClickEvent)
 
