@@ -11,13 +11,15 @@ const contentTarget = document.querySelector(".dropdownContainer--parks")
 
 eventHub.addEventListener("newTripBtnWasClicked", event => {
     const state = event.detail.stateCode
-
-    render(state)
+    if (state === "0") {
+        alert(`Please select a state!`)
+    } else {
+        render(state)
+    }
 })
 
 // function that pulls the parks data and iterates each park to display the Park dropdown HTML rep. 
 const render = (state) => {
-
     getParksByState(state)
         .then(() => {
 
@@ -25,7 +27,7 @@ const render = (state) => {
             contentTarget.innerHTML = ParkSelectDropdown(parks)
 
             contentTarget.innerHTML += `
-    <section id="parkPreview" class="previewProperties">
+    <section id="parkPreview">
     </section>
     `
             contentTarget.innerHTML += SaveParkButton()

@@ -1,88 +1,60 @@
 {
   "trips": [
     {
-      "timestamp": 1585766354317,
-      "parkCode": "bicr",
-      "foodId": 2,
-      "attractionId": 1,
+      "timestamp": 1585926385169,
+      "parkCode": "klgo",
+      "campgroundId": 2461,
+      "foodId": 3,
+      "attractionId": 2,
       "id": 1
     },
     {
-      "timestamp": 1585771335729,
-      "parkCode": "bicr",
-      "foodId": 2,
-      "attractionId": 1,
+      "timestamp": 1585926611190,
+      "parkCode": "olsp",
+      "campgroundId": null,
+      "foodId": 30,
+      "attractionId": 32,
       "id": 2
     },
     {
-      "timestamp": 1585772347223,
-      "parkCode": "bicr",
-      "foodId": 2,
-      "attractionId": 1,
+      "timestamp": 1585926846355,
+      "parkCode": "anch",
+      "campgroundId": null,
+      "foodId": 3,
+      "attractionId": 2,
       "id": 3
     },
     {
-      "timestamp": 1585772707601,
-      "parkCode": "bicr",
-      "foodId": 2,
-      "attractionId": 1,
+      "timestamp": 1585927480240,
+      "parkCode": "grte",
+      "campgroundId": 2170,
+      "foodId": 52,
+      "attractionId": 51,
       "id": 4
     },
     {
-      "timestamp": 1585772841557,
-      "parkCode": "bicr",
-      "foodId": 2,
-      "attractionId": 1,
+      "timestamp": 1585928866239,
+      "parkCode": "grte",
+      "campgroundId": 36,
+      "foodId": 52,
+      "attractionId": 51,
       "id": 5
     },
     {
-      "timestamp": 1585773321356,
-      "parkCode": "bicr",
-      "foodId": 2,
-      "attractionId": 1,
+      "timestamp": 1585929211101,
+      "parkCode": "grte",
+      "campgroundId": 2170,
+      "foodId": 52,
+      "attractionId": 51,
       "id": 6
     },
     {
-      "timestamp": 1585775218299,
-      "parkCode": "cagr",
-      "foodId": 4,
-      "attractionId": 3,
+      "timestamp": 1585931893703,
+      "parkCode": "grte",
+      "campgroundId": 36,
+      "foodId": 52,
+      "attractionId": 51,
       "id": 7
-    },
-    {
-      "timestamp": 1585775356361,
-      "parkCode": "poex",
-      "foodId": 46,
-      "attractionId": 45,
-      "id": 8
-    },
-    {
-      "timestamp": 1585835350563,
-      "parkCode": "hutr",
-      "foodId": 4,
-      "attractionId": 3,
-      "id": 9
-    },
-    {
-      "timestamp": 1585840504412,
-      "parkCode": "anch",
-      "foodId": 3,
-      "attractionId": 2,
-      "id": 10
-    },
-    {
-      "timestamp": 1585840550513,
-      "parkCode": "olsp",
-      "foodId": 30,
-      "attractionId": 32,
-      "id": 11
-    },
-    {
-      "timestamp": 1585840676241,
-      "parkCode": "dino",
-      "foodId": 46,
-      "attractionId": 6,
-      "id": 12
     }
   ]
 }

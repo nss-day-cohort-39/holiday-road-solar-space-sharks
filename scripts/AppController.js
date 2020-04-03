@@ -1,3 +1,5 @@
+import { UpdateNavBar } from "./navigation/TopNavBar.js"
+
 /*
     Manages the app state for all other components
 */
@@ -23,23 +25,52 @@ List of possible app states
 export let pageState = "home"
 
 eventHub.addEventListener("newTripBtnWasClicked", event => {
-    pageState = "parkSelect"
-    pageStateChanged()
+    const state = event.detail.stateCode
+    if (state !== "0") {
+        pageState = "parkSelect"
+        pageStateChanged()
+    }
 })
 
 eventHub.addEventListener("saveParkButtonClicked", event => {
-    pageState = "eaterySelect"
-    pageStateChanged()
+    if (event.detail.parkCode !== "0") {
+        const hasCampgrounds = event.detail.hasCampground
+        if (hasCampgrounds === true) {
+            pageState = "campgroundSelect"
+        } else {
+            pageState = "eaterySelect"
+        }
+        pageStateChanged()
+    }
+
 })
 
+eventHub.addEventListener("saveCampgroundButtonClicked", event => {
+    if (event.detail.campgroundId !== "0") {
+        pageState = "eaterySelect"
+        pageStateChanged()
+    } else {
+        alert("Please select a campground!")
+    }
+})
+
+
 eventHub.addEventListener("saveFoodButtonClicked", event => {
-    pageState = "attractionSelect"
-    pageStateChanged()
+    if (event.detail.foodId !== "0") {
+        pageState = "attractionSelect"
+        pageStateChanged()
+    } else {
+        alert("Please select a restaurant!")
+    }
 })
 
 eventHub.addEventListener("saveAttractionButtonClicked", event => {
-    pageState = "myTrip"
-    pageStateChanged()
+    if (event.detail.attractionId !== "0") {
+        pageState = "myTrip"
+        pageStateChanged()
+    } else {
+        alert("Please select an attraction!")
+    }
 })
 
 eventHub.addEventListener("myTripButtonClicked", event => {
@@ -57,10 +88,17 @@ eventHub.addEventListener("mySavedTripsBtnWasClicked", event => {
     pageStateChanged()
 })
 
+eventHub.addEventListener("homeButtonClicked", event => {
+    pageState = "home"
+    document.querySelector('#loading').classList.add("hidden")
+    pageStateChanged()
+})
+
 const hideAllComponents = () => {
     const componentArray = [
         '.welcomeContainer',
         '.dropdownContainer--parks',
+        '.dropdownContainer--campgrounds',
         '.dropdownContainer--food',
         '.dropdownContainer--attraction',
         '.previewContainer',
@@ -78,6 +116,8 @@ export const pageStateChanged = () => {
         document.querySelector(".welcomeContainer").classList.remove("hidden")
     } else if (pageState === "parkSelect") {
         document.querySelector(".dropdownContainer--parks").classList.remove("hidden")
+    } else if (pageState === "campgroundSelect") {
+        document.querySelector(".dropdownContainer--campgrounds").classList.remove("hidden")
     } else if (pageState === "eaterySelect") {
         document.querySelector(".dropdownContainer--food").classList.remove("hidden")
     } else if (pageState === "attractionSelect") {
@@ -90,4 +130,6 @@ export const pageStateChanged = () => {
         //if page state isn't set default to home
         document.querySelector(".welcomeContainer").classList.remove("hidden")
     }
+
+    UpdateNavBar(pageState)
 }

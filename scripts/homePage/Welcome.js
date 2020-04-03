@@ -13,8 +13,10 @@ export const Welcome = () => {
     contentTarget.innerHTML = `
   <h1>Welcome to Remote-ly!</h1>
   <div><img class="hoverVanIcon" src="images/van_icon.png" /></div>
-  ${StateSelectDropdown()}
-  ${NewTripButton()}
+  <div>
+    ${StateSelectDropdown()}
+    ${NewTripButton()}
+  </div>
   ${MySavedTripsButton()}
   `
 }

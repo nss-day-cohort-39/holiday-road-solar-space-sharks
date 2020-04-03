@@ -1,3 +1,5 @@
+import { getCampgroundsByPark, useCampgroundsByPark } from "../campgrounds/campgroundProvider.js"
+
 const eventHub = document.querySelector('.container')
 
 export const SaveParkButton = () => {
@@ -9,16 +11,31 @@ export const SaveParkButton = () => {
 //creates a click event listener for the save park button that dispatches the parkCode in a custom event
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveParkButton") {
-
         let parkSelectDropdownValue = document.getElementById("parkSelectDropdown").value
+        if (parkSelectDropdownValue === "0") {
+            alert(`Please select a park!`)
+        } else {
+            // if statement passing whether park chosen does or does not have a campground to app controller
+            document.querySelector(".dropdownContainer--parks").innerHTML = ''
+            let hasCampgrounds = ""
+            getCampgroundsByPark(parkSelectDropdownValue).then(() => {
+                const campgrounds = useCampgroundsByPark()
+                if (campgrounds.length === 0) {
+                    hasCampgrounds = false
+                } else {
+                    hasCampgrounds = true
+                }
+                const saveParkClickEvent = new CustomEvent("saveParkButtonClicked", {
+                    detail: {
+                        parkCode: parkSelectDropdownValue,
+                        hasCampground: hasCampgrounds
+                    }
+                })
 
-        const saveParkClickEvent = new CustomEvent("saveParkButtonClicked", {
-            detail: {
-                parkCode: parkSelectDropdownValue
-            }
-        })
+                eventHub.dispatchEvent(saveParkClickEvent)
+            })
+        }
 
-        eventHub.dispatchEvent(saveParkClickEvent)
 
     }
 })
