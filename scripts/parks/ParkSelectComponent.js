@@ -23,7 +23,7 @@ const render = (state) => {
 
             const parks = useParksByState()
             contentTarget.innerHTML = ParkSelectDropdown(parks)
-
+            
             contentTarget.innerHTML += `
     <section id="parkPreview" class="previewProperties">
     </section>

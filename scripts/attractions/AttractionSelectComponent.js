@@ -51,6 +51,7 @@ eventHub.addEventListener("parkDropDownChanged", event => {
         let filteredAttractions = []
         for (const state of chosenParkStatesArray) {
             const foundAttractions = attractions.filter(attraction => attraction.state === state)
+
             filteredAttractions = filteredAttractions.concat(foundAttractions)
         }
 
