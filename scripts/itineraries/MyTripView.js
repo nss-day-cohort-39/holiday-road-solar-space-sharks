@@ -85,33 +85,39 @@ eventHub.addEventListener('saveParkButtonClicked', event => {
 eventHub.addEventListener('saveAttractionButtonClicked', event => {
     const attractions = useAttractions()
     chosenAttractionId = event.detail.attractionId
-    const chosenAttractionObject = attractions.find(
-        attraction => attraction.id === parseInt(chosenAttractionId)
-    )
+    if (chosenAttractionId !== "0") {
+        const chosenAttractionObject = attractions.find(
+            attraction => attraction.id === parseInt(chosenAttractionId)
+        )
 
-    const attractionTarget = document.querySelector('#myTripAttraction')
-    attractionTarget.innerHTML = chosenAttractionObject.name
-    checkSaveTripButtonRenderCondition()
+        const attractionTarget = document.querySelector('#myTripAttraction')
+        attractionTarget.innerHTML = chosenAttractionObject.name
+        checkSaveTripButtonRenderCondition()
+    }
 })
 
 //when the "save food button" is clicked, get the chosen food ID and insert it into the myTripFood section on the DOM
 eventHub.addEventListener('saveFoodButtonClicked', event => {
     const food = useFoods()
     chosenFoodId = event.detail.foodId
-    const chosenFoodObject = food.find(food => food.id === parseInt(chosenFoodId))
+    if (chosenFoodId !== "0") {
+        const chosenFoodObject = food.find(food => food.id === parseInt(chosenFoodId))
 
-    const foodTarget = document.querySelector('#myTripFood')
-    foodTarget.innerHTML = chosenFoodObject.businessName
-    checkSaveTripButtonRenderCondition()
+        const foodTarget = document.querySelector('#myTripFood')
+        foodTarget.innerHTML = chosenFoodObject.businessName
+        checkSaveTripButtonRenderCondition()
+    }
 })
 
 //when the "save campground button" is clicked, get the chosen campground ID and insert it into the myTripCampground section on the DOM
 eventHub.addEventListener('saveCampgroundButtonClicked', event => {
     const campgrounds = useCampgroundsByPark()
     chosenCampgroundId = event.detail.campgroundId
-    const chosenCampgroundObject = campgrounds.find(campground => parseInt(campground.id) === parseInt(chosenCampgroundId))
+    if (chosenCampgroundId !== "0") {
+        const chosenCampgroundObject = campgrounds.find(campground => parseInt(campground.id) === parseInt(chosenCampgroundId))
 
-    const campgroundTarget = document.querySelector('#myTripCampground')
-    campgroundTarget.innerHTML = chosenCampgroundObject.name
-    checkSaveTripButtonRenderCondition()
+        const campgroundTarget = document.querySelector('#myTripCampground')
+        campgroundTarget.innerHTML = chosenCampgroundObject.name
+        checkSaveTripButtonRenderCondition()
+    }
 })

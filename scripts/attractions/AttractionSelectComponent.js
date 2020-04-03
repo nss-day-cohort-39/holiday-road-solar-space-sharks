@@ -21,7 +21,7 @@ const render = (filteredAttractions) => {
     contentTarget.innerHTML = AttractionSelectDropdown(filteredAttractions)
 
     contentTarget.innerHTML += `
-    <section id="attractionPreview" class="previewProperties"></section>
+    <section id="attractionPreview"></section>
     `
     contentTarget.innerHTML += SaveAttractionButton()
 
@@ -51,7 +51,7 @@ eventHub.addEventListener("parkDropDownChanged", event => {
         let filteredAttractions = []
         for (const state of chosenParkStatesArray) {
             const foundAttractions = attractions.filter(attraction => attraction.state === state)
-              
+
             filteredAttractions = filteredAttractions.concat(foundAttractions)
         }
 

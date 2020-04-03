@@ -8,9 +8,13 @@ import './attractions/AttractionSelectComponent.js'
 import './itineraries/SavedTripsList.js'
 import './weather/weatherProvider.js'
 import './weather/WeatherComponent.js'
+import { UpdateNavBar } from './navigation/TopNavBar.js'
 import './campgrounds/CampgroundSelectComponent.js'
 
 pageStateChanged()
+
+//load the Top Nav Bar on page load
+UpdateNavBar()
 
 //load the welcome components into the welcomeContainer on the DOM
 Welcome()

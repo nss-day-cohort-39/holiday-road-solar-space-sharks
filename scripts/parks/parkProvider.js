@@ -18,9 +18,11 @@ export const useParksByState = () => parksByState.slice()
 
 let parksByParkCode = []
 export const getParksByParkCode = (parkCode) => {
+    loadingVanAnimation.classList.remove('hidden');
     return fetch(`https://developer.nps.gov/api/v1/parks?parkCode=${parkCode}&api_key=${keys.npsKey}`)
         .then(response => response.json())
         .then(parsedParks => {
+            loadingVanAnimation.classList.add('hidden');
             parksByParkCode = parsedParks.data
         })
 }

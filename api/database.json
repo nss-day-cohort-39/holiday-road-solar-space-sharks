@@ -1,92 +1,60 @@
 {
   "trips": [
     {
-      "timestamp": 1585865864318,
-      "parkCode": "bicr",
-      "campgroundId": null,
-      "foodId": 2,
-      "attractionId": 1,
+      "timestamp": 1585926385169,
+      "parkCode": "klgo",
+      "campgroundId": 2461,
+      "foodId": 3,
+      "attractionId": 2,
       "id": 1
     },
     {
-      "timestamp": 1585866053682,
-      "parkCode": "grte",
-      "campgroundId": 94,
-      "foodId": 52,
-      "attractionId": 51,
+      "timestamp": 1585926611190,
+      "parkCode": "olsp",
+      "campgroundId": null,
+      "foodId": 30,
+      "attractionId": 32,
       "id": 2
     },
     {
-      "timestamp": 1585866169205,
-      "parkCode": "dino",
-      "campgroundId": 1122,
-      "foodId": 46,
-      "attractionId": 6,
+      "timestamp": 1585926846355,
+      "parkCode": "anch",
+      "campgroundId": null,
+      "foodId": 3,
+      "attractionId": 2,
       "id": 3
     },
     {
-      "timestamp": 1585868588543,
-      "parkCode": "fosm",
-      "campgroundId": null,
-      "foodId": 5,
-      "attractionId": 37,
+      "timestamp": 1585927480240,
+      "parkCode": "grte",
+      "campgroundId": 2170,
+      "foodId": 52,
+      "attractionId": 51,
       "id": 4
     },
     {
-      "timestamp": 1585868634586,
-      "parkCode": "romo",
-      "campgroundId": 4573,
-      "foodId": 7,
-      "attractionId": 6,
+      "timestamp": 1585928866239,
+      "parkCode": "grte",
+      "campgroundId": 36,
+      "foodId": 52,
+      "attractionId": 51,
       "id": 5
     },
     {
-      "timestamp": 1585868787038,
-      "parkCode": "cali",
-      "campgroundId": null,
-      "foodId": 46,
-      "attractionId": 6,
+      "timestamp": 1585929211101,
+      "parkCode": "grte",
+      "campgroundId": 2170,
+      "foodId": 52,
+      "attractionId": 51,
       "id": 6
     },
     {
-      "timestamp": 1585879958972,
-      "parkCode": "cari",
-      "campgroundId": null,
-      "foodId": 20,
-      "attractionId": 19,
+      "timestamp": 1585931893703,
+      "parkCode": "grte",
+      "campgroundId": 36,
+      "foodId": 52,
+      "attractionId": 51,
       "id": 7
-    },
-    {
-      "timestamp": 1585888050984,
-      "parkCode": "hove",
-      "campgroundId": 2466,
-      "foodId": 7,
-      "attractionId": 6,
-      "id": 8
-    },
-    {
-      "timestamp": 1585921802176,
-      "parkCode": "hove",
-      "campgroundId": 2466,
-      "foodId": 46,
-      "attractionId": 45,
-      "id": 9
-    },
-    {
-      "timestamp": 1585923556366,
-      "parkCode": "grsa",
-      "campgroundId": 1145,
-      "foodId": 7,
-      "attractionId": 6,
-      "id": 10
-    },
-    {
-      "timestamp": 1585923792077,
-      "parkCode": "foth",
-      "campgroundId": null,
-      "foodId": 10,
-      "attractionId": 8,
-      "id": 11
     }
   ]
 }
