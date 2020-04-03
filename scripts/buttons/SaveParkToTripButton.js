@@ -14,7 +14,6 @@ eventHub.addEventListener("click", clickEvent => {
         let parkSelectDropdownValue = document.getElementById("parkSelectDropdown").value
 
         let hasCampgrounds = ""
-        console.log(hasCampgrounds)
         getCampgroundsByPark(parkSelectDropdownValue).then(() => {
             const campgrounds = useCampgroundsByPark()
             if (campgrounds.length === 0) {
