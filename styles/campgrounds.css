@@ -2,7 +2,7 @@
 .campgroundHourColumns {
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-start;
+    justify-content: center;
     border: .2em;
 }
 
@@ -11,6 +11,8 @@
     flex-flow: column nowrap;
     border: solid black;
     margin: .2em;
+    font-size: .7em;
+
 }
 
 .campgroundDay {
