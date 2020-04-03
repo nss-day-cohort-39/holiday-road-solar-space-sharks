@@ -21,7 +21,7 @@ const render = () => {
             return trip.parkCode
         }).join(",")
 
-        // query all parks on park website and return array of park objects that match codes passed in "stringOfCodes"
+        // first get Campgrounds (takes the longest) then get the rest of the data to correctly render Saved Trip Component
         getCampgroundsByPark(stringOfParkCodes)
             .then(getFoods)
             .then(getAttractions)

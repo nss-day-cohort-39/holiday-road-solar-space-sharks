@@ -12,7 +12,7 @@ export const SaveParkButton = () => {
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveParkButton") {
         let parkSelectDropdownValue = document.getElementById("parkSelectDropdown").value
-
+        // if statement passing whether park chosen does or does not have a campground to app controller
         let hasCampgrounds = ""
         getCampgroundsByPark(parkSelectDropdownValue).then(() => {
             const campgrounds = useCampgroundsByPark()

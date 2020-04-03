@@ -19,7 +19,7 @@ export const SavedTrip = tripObject => {
             attraction => attraction.id === tripObject.attractionId)
 
         const campgrounds = useCampgroundsByPark()
-
+      //if statement to render Saved Trip w/ or w/o campground
         if (tripObject.campgroundId !== null) {
                 const chosenCampground = campgrounds.find(campground => parseInt(campground.id) === tripObject.campgroundId)
                 return `
