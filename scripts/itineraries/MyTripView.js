@@ -18,10 +18,10 @@ let chosenCampgroundId = null
 export const RenderMyTripViewContainers = () => {
     contentTarget.innerHTML = `
     <h2>My Current Trip</h2>
-    <section class="previewChoice"><span class="previewChoice__label">Park</span> <span id="myTripPark"></span></section>
-    <section class="previewChoice"><span class="previewChoice__label">CampGround</span> <span id="myTripCampground"></span></section>
-    <section class="previewChoice"><span class="previewChoice__label">Restaurant</span> <span id="myTripFood"></span></section>
-    <section class="previewChoice"><span class="previewChoice__label">Attraction</span> <span id="myTripAttraction"></span></section>
+    <section class="previewChoice"><span class="previewChoice__label">Park</span> <span id="myTripPark">---</span></section>
+    <section class="previewChoice"><span class="previewChoice__label">Campground</span> <span id="myTripCampground">---</span></section>
+    <section class="previewChoice"><span class="previewChoice__label">Restaurant</span> <span id="myTripFood"></span>---</section>
+    <section class="previewChoice"><span class="previewChoice__label">Attraction</span> <span id="myTripAttraction">---</span></section>
     <div class="saveTripButtonContainer">
     </div>
     <div class="backButtonContainer"></div>

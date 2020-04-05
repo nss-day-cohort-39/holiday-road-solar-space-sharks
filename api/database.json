@@ -103,6 +103,14 @@
       "foodId": 25,
       "attractionId": 24,
       "id": 13
+    },
+    {
+      "timestamp": 1586118135877,
+      "parkCode": "fosm",
+      "campgroundId": null,
+      "foodId": 5,
+      "attractionId": 37,
+      "id": 14
     }
   ]
 }
