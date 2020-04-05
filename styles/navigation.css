@@ -73,6 +73,7 @@
     background-color: transparent;
     border-radius: unset;
     top: -9px;
+    right: 0;
 }
 
 .icon--home {
@@ -143,8 +144,7 @@
     left: 66.66%;
 }
 
-#navBar__road__button--van.position--savedTripsList,
-#navBar__road__button--savedTripsList {
+#navBar__road__button--van.position--savedTripsList {
     left: 83.33%;
 }
 
