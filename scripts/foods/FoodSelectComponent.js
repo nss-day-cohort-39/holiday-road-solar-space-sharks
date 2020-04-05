@@ -76,7 +76,6 @@ eventHub.addEventListener("foodDropDownChanged", event => {
 
 eventHub.addEventListener("saveParkButtonClicked", event => {
     const hasCampgrounds = event.detail.hasCampgrounds
-    console.log(hasCampgrounds)
     if (hasCampgrounds) {
         contentTarget.innerHTML += BackButton("campgroundSelect")
     } else {

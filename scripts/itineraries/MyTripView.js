@@ -24,12 +24,19 @@ export const RenderMyTripViewContainers = () => {
     <section class="previewChoice"><span class="previewChoice__label">Attraction</span> <span id="myTripAttraction"></span></section>
     <div class="saveTripButtonContainer">
     </div>
-
+    <div class="backButtonContainer"></div>
     `
 }
 
+//add back button that is aware of previous page
+eventHub.addEventListener("myTripButtonClicked", event => {
+    const backButtonContainer = document.querySelector(".backButtonContainer")
+    backButtonContainer.innerHTML = BackButton(event.detail.newPageState)
+})
+
 // make sure save trip button doesn't render until all required fields are selected
 const checkSaveTripButtonRenderCondition = () => {
+    const backButtonContainer = document.querySelector(".backButtonContainer")
     const buttonContainerElement = document.querySelector(
         '.saveTripButtonContainer'
     )
@@ -39,6 +46,7 @@ const checkSaveTripButtonRenderCondition = () => {
         chosenFoodId !== null &&
         chosenAttractionId !== null
     ) {
+        backButtonContainer.innerHTML = BackButton("attractionSelect")
         buttonContainerElement.innerHTML = `<button id="saveCompleteTrip">Save to My Trips</button>`
     } else {
         buttonContainerElement.innerHTML = ''

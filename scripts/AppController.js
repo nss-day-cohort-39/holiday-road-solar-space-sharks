@@ -97,7 +97,6 @@ eventHub.addEventListener("homeButtonClicked", event => {
 })
 
 eventHub.addEventListener("backButtonClicked", event => {
-    console.log('clicked back')
 
     //if the back button takes you to the park selection page, re-trigger the new trip event so that the parks will render
     pageState = event.detail.newPageState
@@ -151,8 +150,6 @@ export const pageStateChanged = () => {
         //if page state isn't set default to home
         document.querySelector(".welcomeContainer").classList.remove("hidden")
     }
-
-    console.log(pageState)
 
     UpdateNavBar(pageState)
 }
