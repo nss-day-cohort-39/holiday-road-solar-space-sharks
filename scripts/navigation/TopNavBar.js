@@ -11,6 +11,7 @@ export const TopNavBar = () => {
         <div id="navBar__road__button--food" class="navBar__road__icon"></div>
         <div id="navBar__road__button--attraction" class="navBar__road__icon"></div>
         <div id="navBar__road__button--savedTripsList" class="navBar__road__icon icon--star"></div>
+        <div class="navBar__road__icon icon--cloud"></div>
     `
 }
 
@@ -53,6 +54,14 @@ navigationHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "navBar__road__button--home") {
         const homeButtonClickEvent = new CustomEvent('homeButtonClicked')
         eventHub.dispatchEvent(homeButtonClickEvent)
+
+    }
+})
+
+navigationHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "navBar__road__button--savedTripsList") {
+        const savedTripsButtonClickEvent = new CustomEvent('mySavedTripsBtnWasClicked')
+        eventHub.dispatchEvent(savedTripsButtonClickEvent)
 
     }
 })
