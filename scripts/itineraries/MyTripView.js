@@ -64,6 +64,20 @@ eventHub.addEventListener('click', event => {
 
 })
 
+//when the user clicks the home button and then selects a new state, clear out the old data
+eventHub.addEventListener('newTripBtnWasClicked', event => {
+    chosenParkCode = ''
+    chosenFoodId = null
+    chosenAttractionId = null
+    chosenCampgroundId = null
+
+    document.querySelector('#myTripPark').innerHTML = ``
+    document.querySelector('#myTripAttraction').innerHTML = ``
+    document.querySelector('#myTripFood').innerHTML = ``
+    document.querySelector('#myTripCampground').innerHTML = ``
+
+})
+
 //when the "save park button" is clicked, get the chosen parkCode and insert it into the myTripPark section on the DOM
 eventHub.addEventListener('saveParkButtonClicked', event => {
     RenderMyTripViewContainers()

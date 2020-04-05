@@ -79,6 +79,22 @@
       "foodId": 2,
       "attractionId": 1,
       "id": 10
+    },
+    {
+      "timestamp": 1586103845427,
+      "parkCode": "bicy",
+      "campgroundId": 2441,
+      "foodId": 11,
+      "attractionId": 10,
+      "id": 11
+    },
+    {
+      "timestamp": 1586103912501,
+      "parkCode": "bicr",
+      "campgroundId": null,
+      "foodId": 2,
+      "attractionId": 1,
+      "id": 12
     }
   ]
 }
