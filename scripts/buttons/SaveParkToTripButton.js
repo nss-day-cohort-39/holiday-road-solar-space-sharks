@@ -16,6 +16,7 @@ eventHub.addEventListener("click", clickEvent => {
             alert(`Please select a park!`)
         } else {
             // if statement passing whether park chosen does or does not have a campground to app controller
+            document.querySelector(".dropdownContainer--parks").classList.add("hidden")
             let hasCampgrounds = ""
             getCampgroundsByPark(parkSelectDropdownValue).then(() => {
                 const campgrounds = useCampgroundsByPark()

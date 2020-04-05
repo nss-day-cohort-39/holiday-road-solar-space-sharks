@@ -95,6 +95,14 @@
       "foodId": 2,
       "attractionId": 1,
       "id": 12
+    },
+    {
+      "timestamp": 1586116912189,
+      "parkCode": "voya",
+      "campgroundId": null,
+      "foodId": 25,
+      "attractionId": 24,
+      "id": 13
     }
   ]
 }
