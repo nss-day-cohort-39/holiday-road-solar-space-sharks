@@ -111,6 +111,14 @@
       "foodId": 5,
       "attractionId": 37,
       "id": 14
+    },
+    {
+      "timestamp": 1586120244199,
+      "parkCode": "frri",
+      "campgroundId": null,
+      "foodId": 2,
+      "attractionId": 1,
+      "id": 15
     }
   ]
 }
