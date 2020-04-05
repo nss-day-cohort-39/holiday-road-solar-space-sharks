@@ -3,6 +3,7 @@ import { useAttractions } from '../attractions/attractionProvider.js'
 import { useFoods } from '../foods/foodProvider.js'
 import { saveNewTrip } from './savedTripsProvider.js'
 import { useCampgroundsByPark } from '../campgrounds/campgroundProvider.js'
+import { BackButton } from '../buttons/BackButton.js'
 
 const eventHub = document.querySelector('.container')
 const contentTarget = document.querySelector('.previewContainer')
@@ -23,6 +24,7 @@ export const RenderMyTripViewContainers = () => {
     <section class="previewChoice"><span class="previewChoice__label">Attraction</span> <span id="myTripAttraction"></span></section>
     <div class="saveTripButtonContainer">
     </div>
+
     `
 }
 

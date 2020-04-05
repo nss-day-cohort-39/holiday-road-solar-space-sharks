@@ -28,7 +28,7 @@ eventHub.addEventListener("click", clickEvent => {
                 const saveParkClickEvent = new CustomEvent("saveParkButtonClicked", {
                     detail: {
                         parkCode: parkSelectDropdownValue,
-                        hasCampground: hasCampgrounds
+                        hasCampgrounds: hasCampgrounds
                     }
                 })
 

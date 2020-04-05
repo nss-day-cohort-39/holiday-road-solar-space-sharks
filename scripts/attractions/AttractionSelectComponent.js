@@ -4,6 +4,7 @@ import { AttractionPreview } from "./AttractionPreview.js"
 import { SaveAttractionButton } from "../buttons/SaveAttractionToTripButton.js"
 import { ViewMyTripButton } from "../buttons/ViewMyTripButton.js"
 import { useParksByState } from "../parks/parkProvider.js"
+import { BackButton } from "../buttons/BackButton.js"
 
 const eventHub = document.querySelector('.container')
 const contentTarget = document.querySelector(".dropdownContainer--attraction")
@@ -25,7 +26,9 @@ const render = (filteredAttractions) => {
     `
     contentTarget.innerHTML += SaveAttractionButton()
 
-    contentTarget.innerHTML += ViewMyTripButton()
+    contentTarget.innerHTML += ViewMyTripButton("attractionSelect")
+
+    contentTarget.innerHTML += BackButton("eaterySelect")
 
 }
 

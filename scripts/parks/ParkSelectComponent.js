@@ -5,11 +5,12 @@ import { ParkPreview } from "./ParkPreview.js"
 import { ViewMyTripButton } from "../buttons/ViewMyTripButton.js"
 import { RenderWeather } from "../weather/WeatherComponent.js"
 import { getWeather } from "../weather/weatherProvider.js"
-
+import { BackButton } from "../buttons/BackButton.js"
 const eventHub = document.querySelector('.container')
 const contentTarget = document.querySelector(".dropdownContainer--parks")
 
 eventHub.addEventListener("newTripBtnWasClicked", event => {
+    contentTarget.innerHTML = ``
     const state = event.detail.stateCode
     if (state === "0") {
         alert(`Please select a state!`)
@@ -22,7 +23,6 @@ eventHub.addEventListener("newTripBtnWasClicked", event => {
 const render = (state) => {
     getParksByState(state)
         .then(() => {
-
             const parks = useParksByState()
             contentTarget.innerHTML = ParkSelectDropdown(parks)
 
@@ -32,7 +32,9 @@ const render = (state) => {
     `
             contentTarget.innerHTML += SaveParkButton()
 
-            contentTarget.innerHTML += ViewMyTripButton()
+            contentTarget.innerHTML += ViewMyTripButton("parkSelect")
+
+            contentTarget.innerHTML += BackButton("home")
         })
 }
 

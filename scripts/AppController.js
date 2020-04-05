@@ -11,6 +11,8 @@ List of possible app states
     target = .welcomeContainer
 - parkSelect:
     target = .dropdownContainer--parks
+- campgroundSelect:
+    target = .dropdownContainer--campgrounds
 - eaterySelect:
     target = .dropdownContainer--food
 - attractionSelect:
@@ -34,7 +36,7 @@ eventHub.addEventListener("newTripBtnWasClicked", event => {
 
 eventHub.addEventListener("saveParkButtonClicked", event => {
     if (event.detail.parkCode !== "0") {
-        const hasCampgrounds = event.detail.hasCampground
+        const hasCampgrounds = event.detail.hasCampgrounds
         if (hasCampgrounds === true) {
             pageState = "campgroundSelect"
         } else {
@@ -94,6 +96,25 @@ eventHub.addEventListener("homeButtonClicked", event => {
     pageStateChanged()
 })
 
+eventHub.addEventListener("backButtonClicked", event => {
+    console.log('clicked back')
+
+    //if the back button takes you to the park selection page, re-trigger the new trip event so that the parks will render
+    pageState = event.detail.newPageState
+    if (pageState === "parkSelect") {
+        const stateCodeTarget = document.querySelector("#stateSelectDropdown").value
+        const newTripBtnClickEvent = new CustomEvent('newTripBtnWasClicked', {
+            detail: {
+                stateCode: stateCodeTarget
+            }
+        })
+        eventHub.dispatchEvent(newTripBtnClickEvent)
+    }
+
+    pageStateChanged()
+})
+
+
 const hideAllComponents = () => {
     const componentArray = [
         '.welcomeContainer',
@@ -130,6 +151,8 @@ export const pageStateChanged = () => {
         //if page state isn't set default to home
         document.querySelector(".welcomeContainer").classList.remove("hidden")
     }
+
+    console.log(pageState)
 
     UpdateNavBar(pageState)
 }
