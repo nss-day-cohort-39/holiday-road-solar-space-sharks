@@ -143,8 +143,8 @@
     left: 66.66%;
 }
 
-#navBar__road__button--van.position--myTrip,
-#navBar__road__button--myTrip {
+#navBar__road__button--van.position--savedTripsList,
+#navBar__road__button--savedTripsList {
     left: 83.33%;
 }
 

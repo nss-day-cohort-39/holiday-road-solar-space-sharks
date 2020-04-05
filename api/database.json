@@ -55,6 +55,30 @@
       "foodId": 52,
       "attractionId": 51,
       "id": 7
+    },
+    {
+      "timestamp": 1586102704035,
+      "parkCode": "bicr",
+      "campgroundId": null,
+      "foodId": 2,
+      "attractionId": 1,
+      "id": 8
+    },
+    {
+      "timestamp": 1586102791371,
+      "parkCode": "bicr",
+      "campgroundId": null,
+      "foodId": 2,
+      "attractionId": 1,
+      "id": 9
+    },
+    {
+      "timestamp": 1586103072696,
+      "parkCode": "frri",
+      "campgroundId": null,
+      "foodId": 2,
+      "attractionId": 1,
+      "id": 10
     }
   ]
 }
