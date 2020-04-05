@@ -1,5 +1,116 @@
 {
-    "trips": [
-
-    ]
+  "trips": [
+    {
+      "timestamp": 1585926385169,
+      "parkCode": "klgo",
+      "campgroundId": 2461,
+      "foodId": 3,
+      "attractionId": 2,
+      "id": 1
+    },
+    {
+      "timestamp": 1585926611190,
+      "parkCode": "olsp",
+      "campgroundId": null,
+      "foodId": 30,
+      "attractionId": 32,
+      "id": 2
+    },
+    {
+      "timestamp": 1585926846355,
+      "parkCode": "anch",
+      "campgroundId": null,
+      "foodId": 3,
+      "attractionId": 2,
+      "id": 3
+    },
+    {
+      "timestamp": 1585927480240,
+      "parkCode": "grte",
+      "campgroundId": 2170,
+      "foodId": 52,
+      "attractionId": 51,
+      "id": 4
+    },
+    {
+      "timestamp": 1585928866239,
+      "parkCode": "grte",
+      "campgroundId": 36,
+      "foodId": 52,
+      "attractionId": 51,
+      "id": 5
+    },
+    {
+      "timestamp": 1585929211101,
+      "parkCode": "grte",
+      "campgroundId": 2170,
+      "foodId": 52,
+      "attractionId": 51,
+      "id": 6
+    },
+    {
+      "timestamp": 1585931893703,
+      "parkCode": "grte",
+      "campgroundId": 36,
+      "foodId": 52,
+      "attractionId": 51,
+      "id": 7
+    },
+    {
+      "timestamp": 1586102704035,
+      "parkCode": "bicr",
+      "campgroundId": null,
+      "foodId": 2,
+      "attractionId": 1,
+      "id": 8
+    },
+    {
+      "timestamp": 1586102791371,
+      "parkCode": "bicr",
+      "campgroundId": null,
+      "foodId": 2,
+      "attractionId": 1,
+      "id": 9
+    },
+    {
+      "timestamp": 1586103072696,
+      "parkCode": "frri",
+      "campgroundId": null,
+      "foodId": 2,
+      "attractionId": 1,
+      "id": 10
+    },
+    {
+      "timestamp": 1586103845427,
+      "parkCode": "bicy",
+      "campgroundId": 2441,
+      "foodId": 11,
+      "attractionId": 10,
+      "id": 11
+    },
+    {
+      "timestamp": 1586103912501,
+      "parkCode": "bicr",
+      "campgroundId": null,
+      "foodId": 2,
+      "attractionId": 1,
+      "id": 12
+    },
+    {
+      "timestamp": 1586116912189,
+      "parkCode": "voya",
+      "campgroundId": null,
+      "foodId": 25,
+      "attractionId": 24,
+      "id": 13
+    },
+    {
+      "timestamp": 1586118135877,
+      "parkCode": "fosm",
+      "campgroundId": null,
+      "foodId": 5,
+      "attractionId": 37,
+      "id": 14
+    }
+  ]
 }
