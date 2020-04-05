@@ -100,15 +100,15 @@ eventHub.addEventListener("backButtonClicked", event => {
 
     //if the back button takes you to the park selection page, re-trigger the new trip event so that the parks will render
     pageState = event.detail.newPageState
-    if (pageState === "parkSelect") {
-        const stateCodeTarget = document.querySelector("#stateSelectDropdown").value
-        const newTripBtnClickEvent = new CustomEvent('newTripBtnWasClicked', {
-            detail: {
-                stateCode: stateCodeTarget
-            }
-        })
-        eventHub.dispatchEvent(newTripBtnClickEvent)
-    }
+        // if (pageState === "parkSelect") {
+        //     const stateCodeTarget = document.querySelector("#stateSelectDropdown").value
+        //     const newTripBtnClickEvent = new CustomEvent('newTripBtnWasClicked', {
+        //         detail: {
+        //             stateCode: stateCodeTarget
+        //         }
+        //     })
+        //     eventHub.dispatchEvent(newTripBtnClickEvent)
+        // }
 
     pageStateChanged()
 })
