@@ -9,11 +9,11 @@
       "id": 1
     },
     {
-      "timestamp": 1585926611190,
-      "parkCode": "olsp",
+      "timestamp": 1586120593466,
+      "parkCode": "bicr",
       "campgroundId": null,
-      "foodId": 30,
-      "attractionId": 32,
+      "foodId": 2,
+      "attractionId": 1,
       "id": 2
     },
     {

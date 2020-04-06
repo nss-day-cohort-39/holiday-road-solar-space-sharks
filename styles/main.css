@@ -11,8 +11,6 @@
 
 html,
 body {
-    height: 100%;
-    overflow-y: auto;
     box-sizing: border-box;
 }
 
@@ -42,7 +40,7 @@ button {
     background-color: #32645a;
     color: #f3fff3;
     padding: .5em;
-    margin: 0 .5em 0 .5em;
+    margin: .5em;
     border: 0;
     border-radius: 5px;
 }
@@ -53,6 +51,22 @@ button:hover {
 
 button:active {
     background-color: #7b645b;
+}
+
+
+/* back button styles */
+
+.backButton {
+    background-color: #93aca7;
+    color: white;
+}
+
+.backButton:hover {
+    background-color: #a6c0bb;
+}
+
+.backButton:active {
+    background-color: #99d7cb;
 }
 
 .hidden {
@@ -66,13 +80,10 @@ button:active {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    /* justify-content: center; */
     justify-content: start;
     align-items: center;
     padding: 1em;
-    /* margin-top: 40px; */
     overflow-y: auto;
-    height: calc(100% - 80px);
 }
 
 .previewProperties {
@@ -96,16 +107,16 @@ button:active {
 
 @keyframes wiggle {
     0% {
-        transform: rotate(4deg);
+        transform: rotate(3deg);
     }
     25% {
-        transform: rotate(-4deg);
+        transform: rotate(-3deg);
     }
     50% {
-        transform: rotate(8deg);
+        transform: rotate(6deg);
     }
     75% {
-        transform: rotate(-4deg);
+        transform: rotate(-3deg);
     }
     100% {
         transform: rotate(0deg);

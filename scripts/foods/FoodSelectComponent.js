@@ -4,6 +4,7 @@ import { FoodSelectDropdown } from "./FoodSelectDropdown.js"
 import { FoodPreview } from "./FoodPreview.js"
 import { SaveFoodButton } from "../buttons/SaveFoodToTripButton.js"
 import { useParksByState } from "../parks/parkProvider.js"
+import { BackButton } from "../buttons/BackButton.js"
 
 const eventHub = document.querySelector('.container')
 const contentTarget = document.querySelector(".dropdownContainer--food")
@@ -23,7 +24,7 @@ const render = (filteredFoods) => {
     `
     contentTarget.innerHTML += SaveFoodButton()
 
-    contentTarget.innerHTML += ViewMyTripButton()
+    contentTarget.innerHTML += ViewMyTripButton("eaterySelect")
 
 }
 
@@ -71,4 +72,13 @@ eventHub.addEventListener("foodDropDownChanged", event => {
 
     //show the details of the food place
     contentTarget.innerHTML = FoodPreview(foundFood)
+})
+
+eventHub.addEventListener("saveParkButtonClicked", event => {
+    const hasCampgrounds = event.detail.hasCampgrounds
+    if (hasCampgrounds) {
+        contentTarget.innerHTML += BackButton("campgroundSelect")
+    } else {
+        contentTarget.innerHTML += BackButton("parkSelect")
+    }
 })

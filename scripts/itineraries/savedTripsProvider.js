@@ -32,4 +32,7 @@ export const saveNewTrip = newTripObject => {
         })
 }
 
-export const useTrips = () => savedTrips.slice()
+export const useTrips = () => {
+    savedTrips.reverse()
+    return savedTrips.slice()
+}
