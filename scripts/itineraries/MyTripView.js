@@ -3,6 +3,7 @@ import { useAttractions } from '../attractions/attractionProvider.js'
 import { useFoods } from '../foods/foodProvider.js'
 import { saveNewTrip } from './savedTripsProvider.js'
 import { useCampgroundsByPark } from '../campgrounds/campgroundProvider.js'
+import { BackButton } from '../buttons/BackButton.js'
 
 const eventHub = document.querySelector('.container')
 const contentTarget = document.querySelector('.previewContainer')
@@ -18,16 +19,24 @@ export const RenderMyTripViewContainers = () => {
     contentTarget.innerHTML = `
     <h2>My Current Trip</h2>
     <section class="previewChoice"><span class="previewChoice__label">Park</span> <span id="myTripPark"></span></section>
-    <section class="previewChoice"><span class="previewChoice__label">CampGround</span> <span id="myTripCampground"></span></section>
+    <section class="previewChoice"><span class="previewChoice__label">Campground</span> <span id="myTripCampground"></span></section>
     <section class="previewChoice"><span class="previewChoice__label">Restaurant</span> <span id="myTripFood"></span></section>
     <section class="previewChoice"><span class="previewChoice__label">Attraction</span> <span id="myTripAttraction"></span></section>
     <div class="saveTripButtonContainer">
     </div>
+    <div class="backButtonContainer"></div>
     `
 }
 
+//add back button that is aware of previous page
+eventHub.addEventListener("myTripButtonClicked", event => {
+    const backButtonContainer = document.querySelector(".backButtonContainer")
+    backButtonContainer.innerHTML = BackButton(event.detail.newPageState)
+})
+
 // make sure save trip button doesn't render until all required fields are selected
 const checkSaveTripButtonRenderCondition = () => {
+    const backButtonContainer = document.querySelector(".backButtonContainer")
     const buttonContainerElement = document.querySelector(
         '.saveTripButtonContainer'
     )
@@ -37,6 +46,7 @@ const checkSaveTripButtonRenderCondition = () => {
         chosenFoodId !== null &&
         chosenAttractionId !== null
     ) {
+        backButtonContainer.innerHTML = BackButton("attractionSelect")
         buttonContainerElement.innerHTML = `<button id="saveCompleteTrip">Save to My Trips</button>`
     } else {
         buttonContainerElement.innerHTML = ''
@@ -61,6 +71,20 @@ eventHub.addEventListener('click', event => {
         }
         saveNewTrip(newTripObj)
     }
+
+})
+
+//when the user clicks the home button and then selects a new state, clear out the old data
+eventHub.addEventListener('newTripBtnWasClicked', event => {
+    chosenParkCode = ''
+    chosenFoodId = null
+    chosenAttractionId = null
+    chosenCampgroundId = null
+
+    document.querySelector('#myTripPark').innerHTML = ``
+    document.querySelector('#myTripAttraction').innerHTML = ``
+    document.querySelector('#myTripFood').innerHTML = ``
+    document.querySelector('#myTripCampground').innerHTML = ``
 
 })
 

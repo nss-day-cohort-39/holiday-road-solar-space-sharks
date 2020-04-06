@@ -64,6 +64,21 @@
 
 /* my trips/preview icon on the nav bar */
 
+.icon--cloud {
+    background-image: url('../images/cloud.png');
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+    border-radius: unset;
+    top: 8px;
+    right: 50px;
+    opacity: .4;
+    transition: transform 1s;
+    z-index: 0;
+}
+
 .icon--star {
     background-image: url('../images/mountain_icon.png');
     background-size: 96px 96px;
@@ -73,6 +88,12 @@
     background-color: transparent;
     border-radius: unset;
     top: -9px;
+    right: 0;
+    cursor: pointer;
+}
+
+.icon--star:hover~.icon--cloud {
+    transform: translateX(-20px);
 }
 
 .icon--home {
@@ -143,8 +164,7 @@
     left: 66.66%;
 }
 
-#navBar__road__button--van.position--myTrip,
-#navBar__road__button--myTrip {
+#navBar__road__button--van.position--savedTripsList {
     left: 83.33%;
 }
 
@@ -183,15 +203,15 @@
 
 @keyframes squishy {
     0% {
-        transform-origin: 50% 100%;
+        transform-origin: bottom center;
         transform: scaleY(1);
     }
     50% {
-        transform-origin: 50% 100%;
+        transform-origin: bottom center;
         transform: scaleY(1.05);
     }
     100% {
-        transform-origin: 50% 100%;
+        transform-origin: bottom center;
         transform: scaleY(1);
     }
 }

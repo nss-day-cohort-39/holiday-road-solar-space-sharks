@@ -3,8 +3,7 @@ import { CampgroundSelectDropdown } from "./CampgroundSelectDropdown.js"
 import { SaveCampgroundButton } from "../buttons/SaveCampgroundToTripButton.js"
 import { getCampgroundsByPark, useCampgroundsByPark } from "./campgroundProvider.js"
 import { CampgroundPreview } from "./CampgroundPreview.js"
-
-
+import { BackButton } from "../buttons/BackButton.js"
 
 const eventHub = document.querySelector('.container')
 const contentTarget = document.querySelector(".dropdownContainer--campgrounds")
@@ -19,7 +18,9 @@ const render = (filteredCampgrounds) => {
     `
     contentTarget.innerHTML += SaveCampgroundButton()
 
-    contentTarget.innerHTML += ViewMyTripButton()
+    contentTarget.innerHTML += ViewMyTripButton("campgroundSelect")
+
+    contentTarget.innerHTML += BackButton("parkSelect")
 
 }
 
@@ -28,7 +29,9 @@ eventHub.addEventListener("parkDropDownChanged", event => {
 
     getCampgroundsByPark(parkCode).then(() => {
         //list of all the campgrounds for the chosen park
+
         const campgrounds = useCampgroundsByPark()
+
         render(campgrounds)
 
     })

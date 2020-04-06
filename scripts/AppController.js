@@ -11,6 +11,8 @@ List of possible app states
     target = .welcomeContainer
 - parkSelect:
     target = .dropdownContainer--parks
+- campgroundSelect:
+    target = .dropdownContainer--campgrounds
 - eaterySelect:
     target = .dropdownContainer--food
 - attractionSelect:
@@ -34,7 +36,7 @@ eventHub.addEventListener("newTripBtnWasClicked", event => {
 
 eventHub.addEventListener("saveParkButtonClicked", event => {
     if (event.detail.parkCode !== "0") {
-        const hasCampgrounds = event.detail.hasCampground
+        const hasCampgrounds = event.detail.hasCampgrounds
         if (hasCampgrounds === true) {
             pageState = "campgroundSelect"
         } else {
@@ -93,6 +95,12 @@ eventHub.addEventListener("homeButtonClicked", event => {
     document.querySelector('#loading').classList.add("hidden")
     pageStateChanged()
 })
+
+eventHub.addEventListener("backButtonClicked", event => {
+    pageState = event.detail.newPageState
+    pageStateChanged()
+})
+
 
 const hideAllComponents = () => {
     const componentArray = [
