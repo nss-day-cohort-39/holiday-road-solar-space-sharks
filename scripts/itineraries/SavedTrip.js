@@ -30,7 +30,7 @@ export const SavedTrip = tripObject => {
                         <h3 id="savedTripFoodId--${tripObject.id}" class="${chosenFood.id}">${chosenFood.businessName}</h3>
                         <h3 id="savedTripAttractionId--${tripObject.id}" class="${chosenAttraction.id}">${chosenAttraction.name}</h3>
                         <button id="getDirectionsButton--${tripObject.id}">Get Directions</button>
-                        <div class="directions--${tripObject.id}"></div>
+                        <div class="directions--${tripObject.id} directions"></div>
                       </section>
                 `
           } else {
@@ -40,7 +40,7 @@ export const SavedTrip = tripObject => {
                         <h3 id="savedTripFoodId--${tripObject.id}" class="${chosenFood.id}">${chosenFood.businessName}</h3>
                         <h3 id="savedTripAttractionId--${tripObject.id}" class="${chosenAttraction.id}">${chosenAttraction.name}</h3>
                         <button id="getDirectionsButton--${tripObject.id}" class="${tripObject.id}">Get Directions</button>
-                        <div class="directions--${tripObject.id}"></div>
+                        <div class="directions--${tripObject.id} directions"></div>
                       </section>
                 `
           }
@@ -51,9 +51,6 @@ eventHub.addEventListener("click", event => {
 
             const parkIdTarget = document.getElementById(`savedTripParkId--${tripId}`)
             const parkId = parkIdTarget.className
-            
-            const campgroundIdTarget = document.getElementById(`savedTripCampgroundId--${tripId}`)
-            const campgroundId = campgroundIdTarget.className
 
             const foodIdTarget = document.getElementById(`savedTripFoodId--${tripId}`)
             const foodId = foodIdTarget.className
@@ -65,7 +62,6 @@ eventHub.addEventListener("click", event => {
                   detail: {
                         tripId: tripId,
                         parkCode: parkId,
-                        campgroundId: campgroundId,
                         foodId: foodId,
                         attractionId: attractionId
                   }
@@ -73,3 +69,28 @@ eventHub.addEventListener("click", event => {
             eventHub.dispatchEvent(getDirectionsButtonEvent)
       }
 })
+
+// eventHub.addEventListener("click", event => {
+//       if (event.target.id.startsWith("getDirectionsButtonNoCamp--")) {
+//             const [blah, tripId] = event.target.id.split("--")
+
+//             const parkIdTarget = document.getElementById(`savedTripParkId--${tripId}`)
+//             const parkId = parkIdTarget.className
+
+//             const foodIdTarget = document.getElementById(`savedTripFoodId--${tripId}`)
+//             const foodId = foodIdTarget.className
+
+//             const attractionIdTarget = document.getElementById(`savedTripAttractionId--${tripId}`)
+//             const attractionId = attractionIdTarget.className
+
+//             const getDirectionsButtonNoCampEvent = new CustomEvent("getDirectionsButtonNoCampClicked" , {
+//                   detail: {
+//                         tripId: tripId,
+//                         parkCode: parkId,
+//                         foodId: foodId,
+//                         attractionId: attractionId
+//                   }
+//             })
+//             eventHub.dispatchEvent(getDirectionsButtonNoCampEvent)
+//       }
+// })

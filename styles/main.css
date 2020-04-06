@@ -111,3 +111,10 @@ button:active {
         transform: rotate(0deg);
     }
 }
+
+.bold {
+    font-weight: bolder;
+}
+.directions {
+    text-align: left;
+}
