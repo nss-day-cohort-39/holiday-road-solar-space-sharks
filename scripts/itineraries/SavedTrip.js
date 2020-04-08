@@ -70,27 +70,3 @@ eventHub.addEventListener("click", event => {
       }
 })
 
-// eventHub.addEventListener("click", event => {
-//       if (event.target.id.startsWith("getDirectionsButtonNoCamp--")) {
-//             const [blah, tripId] = event.target.id.split("--")
-
-//             const parkIdTarget = document.getElementById(`savedTripParkId--${tripId}`)
-//             const parkId = parkIdTarget.className
-
-//             const foodIdTarget = document.getElementById(`savedTripFoodId--${tripId}`)
-//             const foodId = foodIdTarget.className
-
-//             const attractionIdTarget = document.getElementById(`savedTripAttractionId--${tripId}`)
-//             const attractionId = attractionIdTarget.className
-
-//             const getDirectionsButtonNoCampEvent = new CustomEvent("getDirectionsButtonNoCampClicked" , {
-//                   detail: {
-//                         tripId: tripId,
-//                         parkCode: parkId,
-//                         foodId: foodId,
-//                         attractionId: attractionId
-//                   }
-//             })
-//             eventHub.dispatchEvent(getDirectionsButtonNoCampEvent)
-//       }
-// })

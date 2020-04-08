@@ -96,6 +96,12 @@ eventHub.addEventListener("homeButtonClicked", event => {
     pageStateChanged()
 })
 
+eventHub.addEventListener("getDirectionsButtonClicked", event => {
+    pageState = "directions"
+    document.querySelector('#loading').classList.add("hidden")
+    pageStateChanged()
+})
+
 eventHub.addEventListener("backButtonClicked", event => {
     pageState = event.detail.newPageState
     pageStateChanged()
@@ -110,7 +116,8 @@ const hideAllComponents = () => {
         '.dropdownContainer--food',
         '.dropdownContainer--attraction',
         '.previewContainer',
-        '.savedTripsContainer'
+        '.savedTripsContainer',
+        '.directionsContainer'
     ]
 
     componentArray.forEach(component => document.querySelector(component).classList.add("hidden"))
@@ -134,6 +141,8 @@ export const pageStateChanged = () => {
         document.querySelector(".previewContainer").classList.remove("hidden")
     } else if (pageState === "savedTripsList") {
         document.querySelector(".savedTripsContainer").classList.remove("hidden")
+    } else if (pageState === "directions") {
+        document.querySelector(".directionsContainer").classList.remove("hidden")
     } else {
         //if page state isn't set default to home
         document.querySelector(".welcomeContainer").classList.remove("hidden")
