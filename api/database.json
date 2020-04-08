@@ -23,14 +23,6 @@
       "foodId": 34,
       "attractionId": 33,
       "id": 3
-    },
-    {
-      "timestamp": 1586356628755,
-      "parkCode": "cany",
-      "campgroundId": 3479,
-      "foodId": 46,
-      "attractionId": 45,
-      "id": 4
     }
   ]
 }
