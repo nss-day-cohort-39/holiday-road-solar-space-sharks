@@ -15,7 +15,6 @@ eventHub.addEventListener("getDirectionsButtonClicked", event => {
       directionsTarget.innerHTML = ""
       getParksByParkCode(event.detail.parkCode)
       .then(() => {
-
           getFoods()
           getAttractions()
 
@@ -38,44 +37,55 @@ eventHub.addEventListener("getDirectionsButtonClicked", event => {
               return park.parkCode === savedParkId
           })
 
-          getFoodCoords(savedFood).then(getAttractionCoords(savedAttraction)).then(getParkCoords(savedPark))
-          .then(() => {
-              const foodCoords = useFoodCoords()
-              const attractionCoords = useAttractionCoords()  
-              const parkCoords = useParkCoords()
+          return {savedFood, savedAttraction, savedPark}
+      })
+      .then(({savedFood, savedAttraction, savedPark}) => {
+          var a = getFoodCoords(savedFood)
+          var b = getParkCoords(savedPark)
+          var c = getAttractionCoords(savedAttraction)
+          return {
+            a,
+            b,
+            c
+          }
+      })
+      .then(() => {
+          const foodCoords = useFoodCoords()
+          const attractionCoords = useAttractionCoords()  
+          const parkCoords = useParkCoords()
+          
+          const coordArray = [
+            [36.174465, -86.76796]
+          ]
+          if (attractionCoords !== [undefined,undefined]) {
+            coordArray.push([attractionCoords[0], attractionCoords[1]])
+          }
+          if (foodCoords !== [undefined,undefined]) {
+            coordArray.push([foodCoords[0], foodCoords[1]])
+          }
+          if (parkCoords !== [undefined,undefined]) {
+            coordArray.push([parkCoords[0], parkCoords[1]])
+          }
 
-              const coordArray = [
-                [36.174465, -86.76796]
-              ]
-              if (attractionCoords !== [undefined,undefined]) {
-                coordArray.push([attractionCoords[0], attractionCoords[1]])
-              }
-              if (foodCoords !== [undefined,undefined]) {
-                coordArray.push([foodCoords[0], foodCoords[1]])
-              }
-              if (parkCoords !== [undefined,undefined]) {
-                coordArray.push([parkCoords[0], parkCoords[1]])
-              }
-              getDirections(coordArray).then(() => {
-                  const directions = useDirections()
-                  let counter = 0
-                  directionsTarget.innerHTML += `
-                  <div class="previewProperties">
-                    <h2 class="bold">Trip Directions</h2>
-                    ${directions.map(direction => {
-                        const distance = direction.distance*0.000621371
-                        counter += 1
-                        return `
-                        <div class="directionStep">${counter}. ${direction.text} - <span class ="bold">${distance.toFixed(1)} mi</span></div>
-                        `
-                    }).join("")}
-                    ${BackButton("savedTripsList")}
-                  </div>
-                  `
-              })
+          console.log(coordArray)
+          getDirections(coordArray).then(() => {
+              const directions = useDirections()
+              let counter = 0
+              directionsTarget.innerHTML += `
+              <div class="previewProperties">
+                <h2 class="bold">Trip Directions</h2>
+                ${directions.map(direction => {
+                    const distance = direction.distance*0.000621371
+                    counter += 1
+                    return `
+                    <div class="directionStep">${counter}. ${direction.text} - <span class ="bold">${distance.toFixed(1)} mi</span></div>
+                    `
+                }).join("")}
+                ${BackButton("savedTripsList")}
+              </div>
+              `
           })
-    })
-
+      })
 })
 
 
