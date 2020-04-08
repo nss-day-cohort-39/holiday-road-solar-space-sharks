@@ -18,7 +18,7 @@ eventHub.addEventListener("getDirectionsButtonClicked", event => {
 
           getFoods()
           getAttractions()
-          
+
           const attractions = useAttractions()
           const foods = useFoods()
           const parks = useParksByParkCode()
@@ -60,15 +60,18 @@ eventHub.addEventListener("getDirectionsButtonClicked", event => {
                   const directions = useDirections()
                   let counter = 0
                   directionsTarget.innerHTML += `
-                  <h2 class="bold">Trip Directions</h2>
+                  <div class="previewProperties">
+                    <h2 class="bold">Trip Directions</h2>
+                    ${directions.map(direction => {
+                        const distance = direction.distance*0.000621371
+                        counter += 1
+                        return `
+                        <div class="directionStep">${counter}. ${direction.text} - <span class ="bold">${distance.toFixed(1)} mi</span></div>
+                        `
+                    }).join("")}
+                    ${BackButton("savedTripsList")}
+                  </div>
                   `
-                  directions.forEach(direction => {
-                      const distance = direction.distance*0.000621371
-                      counter += 1
-                      directionsTarget.innerHTML += 
-                      `<div class="directionStep">${counter}. ${direction.text} - <span class ="bold">${distance.toFixed(1)} mi</span></div>`
-                  })
-                  directionsTarget.innerHTML += BackButton("savedTripsList")
               })
           })
     })

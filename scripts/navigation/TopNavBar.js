@@ -27,7 +27,7 @@ export const UpdateNavBar = (pageState) => {
             'position--savedTripsList'
         ]
         //reset the styling on the Nav Bar except when page state is myTrip when the van icon should stay where it is
-    if (pageState !== "myTrip") {
+    if (pageState !== "myTrip" && pageState !== "directions") {
         TopNavBar()
         positionClasses.forEach(positionClass => {
             document.querySelector('#navBar__road__button--van').classList.remove(positionClass)
