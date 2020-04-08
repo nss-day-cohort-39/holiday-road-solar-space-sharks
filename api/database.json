@@ -9,12 +9,20 @@
       "id": 1
     },
     {
-      "timestamp": 1586120593466,
-      "parkCode": "bicr",
-      "campgroundId": null,
-      "foodId": 2,
-      "attractionId": 1,
+      "timestamp": 1586303049576,
+      "parkCode": "hove",
+      "campgroundId": 2466,
+      "foodId": 7,
+      "attractionId": 45,
       "id": 2
+    },
+    {
+      "timestamp": 1586303153511,
+      "parkCode": "cacl",
+      "campgroundId": null,
+      "foodId": 34,
+      "attractionId": 33,
+      "id": 3
     }
   ]
 }

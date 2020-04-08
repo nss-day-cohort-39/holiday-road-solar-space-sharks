@@ -5,6 +5,7 @@
 @import url('./parks.css');
 @import url('./mediaqueries.css');
 @import url('./campgrounds.css');
+@import url('./directions.css');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
 /* Top Level Styling */
@@ -121,4 +122,11 @@ button:active {
     100% {
         transform: rotate(0deg);
     }
+}
+
+.bold {
+    font-weight: bolder;
+}
+.directions {
+    text-align: left;
 }
