@@ -40,20 +40,18 @@ eventHub.addEventListener("getDirectionsButtonClicked", event => {
           return {savedFood, savedAttraction, savedPark}
       })
       .then(({savedFood, savedAttraction, savedPark}) => {
-          var a = getFoodCoords(savedFood)
-          var b = getParkCoords(savedPark)
-          var c = getAttractionCoords(savedAttraction)
-          return {
-            a,
-            b,
-            c
-          }
+          getFoodCoords(savedFood)
+          .then(getParkCoords(savedPark))
+          .then(getAttractionCoords(savedAttraction))
+          .then(() => {
+            const foodCoords = useFoodCoords()
+            const attractionCoords = useAttractionCoords() 
+            const parkCoords = useParkCoords()
+
+            return {foodCoords, attractionCoords, parkCoords}
+          })
       })
-      .then(() => {
-          const foodCoords = useFoodCoords()
-          const attractionCoords = useAttractionCoords()  
-          const parkCoords = useParkCoords()
-          
+      .then(({foodCoords, attractionCoords, parkCoords}) => {
           const coordArray = [
             [36.174465, -86.76796]
           ]
